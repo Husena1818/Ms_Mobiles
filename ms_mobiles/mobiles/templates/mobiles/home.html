@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= SEO ================= -->
+
+    <title>Mobile Repair in Bengaluru | MS Mobiles</title>
+
+    <meta name="description"
+          content="MS Mobiles provides mobile repair services in Bengaluru for screen, battery, charging, display, speaker, software, water damage and other mobile problems.">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <meta name="author"
+          content="MS Mobiles">
+
+    <!-- ================= OPEN GRAPH ================= -->
+
+    <meta property="og:title"
+          content="Mobile Repair in Bengaluru | MS Mobiles">
+
+    <meta property="og:description"
+          content="MS Mobiles provides mobile repair services in Bengaluru for screen, battery, charging, display, speaker, software, water damage and other mobile problems.">
+
+    <meta property="og:type"
+          content="website">
+
+    <meta property="og:url"
+          content="http://127.0.0.1:8000/">
+
+    <meta property="og:site_name"
+          content="MS Mobiles">
+
+    <!-- ================= TWITTER / X ================= -->
+
+    <meta name="twitter:card"
+          content="summary">
+
+    <meta name="twitter:title"
+          content="Mobile Repair in Bengaluru | MS Mobiles">
+
+    <meta name="twitter:description"
+          content="Mobile repair services in Bengaluru for screen, battery, charging, display, speaker and other mobile problems.">
+
+    <!-- ================= STRUCTURED DATA ================= -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+
+            {
+                "@type": [
+                    "LocalBusiness",
+                    "MobilePhoneStore"
+                ],
+                "@id": "http://127.0.0.1:8000/#business",
+                "name": "MS Mobiles",
+                "description": "MS Mobiles provides mobile sales and mobile repair services in Bengaluru.",
+                "url": "http://127.0.0.1:8000/",
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Bengaluru"
+                },
+                "knowsAbout": [
+                    "Mobile phone repair",
+                    "Screen repair",
+                    "Battery repair",
+                    "Charging problem repair",
+                    "Display repair",
+                    "Speaker and microphone repair",
+                    "Software problems",
+                    "Water damage repair",
+                    "Mobile phone sales"
+                ]
+            },
+
+            {
+                "@type": "WebSite",
+                "@id": "http://127.0.0.1:8000/#website",
+                "name": "MS Mobiles",
+                "url": "http://127.0.0.1:8000/",
+                "publisher": {
+                    "@id": "http://127.0.0.1:8000/#business"
+                }
+            },
+
+            {
+                "@type": "Service",
+                "@id": "http://127.0.0.1:8000/#mobile-repair-service",
+                "name": "Mobile Repair in Bengaluru",
+                "description": "Mobile phone repair services in Bengaluru including screen, battery, charging, display, speaker, software and water damage repairs.",
+                "provider": {
+                    "@id": "http://127.0.0.1:8000/#business"
+                },
+                "areaServed": {
+                    "@type": "City",
+                    "name": "Bengaluru"
+                },
+                "serviceType": "Mobile Phone Repair"
+            }
+
+        ]
+    }
+    </script>
+
+    <!-- ================= CSS ================= -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: #111827;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .user-name {
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #111827
+                );
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background: #e5e7eb;
+        }
+
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2563eb;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .section {
+            padding: 60px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            margin: -20px auto 40px;
+            text-align: center;
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= REPAIR INFORMATION ================= */
+
+        .repair-info {
+            background: #ffffff;
+        }
+
+        .repair-info-box {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .repair-info-box h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .repair-info-box p {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        .repair-list {
+            margin: 20px 0 0 20px;
+            color: #4b5563;
+            line-height: 1.9;
+        }
+
+        /* ================= BRANDS ================= */
+
+        .brands {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .brand {
+            background: white;
+            padding: 22px;
+            text-align: center;
+            border-radius: 10px;
+            font-weight: bold;
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.06);
+        }
+
+        /* ================= TRACK REPAIR ================= */
+
+        .track-section {
+            background: #eef4ff;
+        }
+
+        .track-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .track-box p {
+            color: #6b7280;
+            margin: 10px 0 20px;
+        }
+
+        /* ================= COST ================= */
+
+        .cost-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .cost-box select {
+            width: 100%;
+            padding: 13px;
+            margin: 20px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+        }
+
+        .cost {
+            font-size: 32px;
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        /* ================= RATING ================= */
+
+        .rating-box {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 14px;
+            text-align: center;
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .stars {
+            font-size: 35px;
+            margin: 20px 0;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #d1d5db;
+        }
+
+        .star.active {
+            color: #f59e0b;
+        }
+
+        .rating-box input,
+        .rating-box textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+        }
+
+        .rating-box textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        #rating-message {
+            margin-top: 15px;
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* ================= FAQ ================= */
+
+        .faq-box {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.06);
+        }
+
+        .faq-item h3 {
+            margin-bottom: 10px;
+            font-size: 19px;
+        }
+
+        .faq-item p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .brands {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="{% url 'home' %}"
+       class="logo">
+
+        MS Mobiles
+
+    </a>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="{% url 'home' %}">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'mobiles' %}">
+                Mobiles
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'repair' %}">
+                Repair
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'track_repair' %}">
+                Track Repair
+            </a>
+        </li>
+
+        <li>
+            <a href="{% url 'cart' %}">
+                Cart
+            </a>
+        </li>
+
+
+        {% if user.is_authenticated %}
+
+            <li>
+                <span class="user-name">
+                    Hi, {{ user.username }}
+                </span>
+            </li>
+
+            <li>
+                <a href="{% url 'logout' %}">
+                    Logout
+                </a>
+            </li>
+
+        {% else %}
+
+            <li>
+                <a href="{% url 'login' %}">
+                    Login
+                </a>
+            </li>
+
+            <li>
+                <a href="{% url 'register' %}">
+                    Register
+                </a>
+            </li>
+
+        {% endif %}
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Mobile Repair in Bengaluru | MS Mobiles
+        </h1>
+
+        <p>
+            MS Mobiles provides professional mobile repair
+            services in Bengaluru for common smartphone problems
+            including screen, battery, charging, display and
+            speaker issues.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'mobiles' %}"
+               class="btn btn-primary">
+
+                Shop Mobiles
+
+            </a>
+
+            <a href="{% url 'repair' %}"
+               class="btn btn-secondary">
+
+                Book a Repair
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Our Mobile Repair and Mobile Services
+    </h2>
+
+    <p class="section-intro">
+        MS Mobiles offers mobile sales and mobile repair services
+        in Bengaluru. Customers can explore smartphones, book a
+        repair, and track the progress of a repair using a Repair ID.
+    </p>
+
+
+    <div class="cards">
+
+
+        <!-- BUY MOBILES -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                📱
+            </div>
+
+            <h3>
+                Buy Mobiles
+            </h3>
+
+            <p>
+                Explore smartphones from popular brands
+                at competitive prices.
+            </p>
+
+            <a href="{% url 'mobiles' %}">
+                View Mobiles →
+            </a>
+
+        </div>
+
+
+        <!-- REPAIR -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                🔧
+            </div>
+
+            <h3>
+                Mobile Repair in Bengaluru
+            </h3>
+
+            <p>
+                Get mobile phone repair services for screen,
+                battery, charging, display, speaker and other
+                common mobile problems.
+            </p>
+
+            <a href="{% url 'repair' %}">
+                Book Repair →
+            </a>
+
+        </div>
+
+
+        <!-- TRACK -->
+
+        <div class="card">
+
+            <div class="card-icon">
+                📦
+            </div>
+
+            <h3>
+                Track Repair
+            </h3>
+
+            <p>
+                Check the current status of your mobile
+                repair using your Repair ID.
+            </p>
+
+            <a href="{% url 'track_repair' %}">
+                Track Repair →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= REPAIR INFORMATION ================= -->
+
+<section class="section repair-info">
+
+    <div class="repair-info-box">
+
+        <h2>
+            Mobile Phone Repair Services in Bengaluru
+        </h2>
+
+        <p>
+            Mobile phones can develop different problems during
+            everyday use. MS Mobiles provides repair services for
+            common smartphone issues in Bengaluru.
+        </p>
+
+        <p>
+            Depending on the problem, customers can book services
+            for screen damage, battery issues, charging problems,
+            display problems, speaker or microphone issues,
+            software problems and other mobile repairs.
+        </p>
+
+        <ul class="repair-list">
+
+            <li>
+                Mobile screen repair
+            </li>
+
+            <li>
+                Mobile battery repair and replacement
+            </li>
+
+            <li>
+                Mobile charging problem repair
+            </li>
+
+            <li>
+                Mobile display repair
+            </li>
+
+            <li>
+                Mobile speaker and microphone repair
+            </li>
+
+            <li>
+                Mobile software problem assistance
+            </li>
+
+            <li>
+                Water damage repair
+            </li>
+
+            <li>
+                Other mobile repair problems
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BRANDS ================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Popular Mobile Brands
+    </h2>
+
+    <p class="section-intro">
+        MS Mobiles features popular smartphone brands including
+        Apple, Samsung, OnePlus, Vivo and Oppo.
+    </p>
+
+
+    <div class="brands">
+
+        <div class="brand">
+            Apple
+        </div>
+
+        <div class="brand">
+            Samsung
+        </div>
+
+        <div class="brand">
+            OnePlus
+        </div>
+
+        <div class="brand">
+            Vivo
+        </div>
+
+        <div class="brand">
+            Oppo
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRACK REPAIR ================= -->
+
+<section class="section track-section">
+
+    <div class="track-box">
+
+        <h2>
+            Track Your Mobile Repair
+        </h2>
+
+        <p>
+            Enter your Repair ID to check the current status
+            of your mobile repair.
+        </p>
+
+        <a href="{% url 'track_repair' %}"
+           class="btn btn-primary">
+
+            Track Repair
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ESTIMATED REPAIR COST ================= -->
+
+<section class="section">
+
+    <div class="cost-box">
+
+        <h2>
+            Estimated Mobile Repair Cost
+        </h2>
+
+        <p>
+            Select your mobile problem to see an estimated cost.
+            The actual repair cost may depend on the device and
+            repair requirement.
+        </p>
+
+        <select id="problem">
+
+            <option value="">
+                Select Problem
+            </option>
+
+            <option value="2500">
+                Broken Screen
+            </option>
+
+            <option value="1200">
+                Battery Issue
+            </option>
+
+            <option value="800">
+                Charging Problem
+            </option>
+
+            <option value="700">
+                Speaker / Mic
+            </option>
+
+            <option value="500">
+                Software Problem
+            </option>
+
+            <option value="2200">
+                Display Problem
+            </option>
+
+            <option value="3000">
+                Water Damage
+            </option>
+
+            <option value="4500">
+                Motherboard Problem
+            </option>
+
+            <option value="1000">
+                Other
+            </option>
+
+        </select>
+
+
+        <div class="cost">
+
+            ₹ <span id="estimated-cost">--</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Frequently Asked Questions About Mobile Repair
+    </h2>
+
+    <div class="faq-box">
+
+
+        <div class="faq-item">
+
+            <h3>
+                What mobile repair services are available in Bengaluru?
+            </h3>
+
+            <p>
+                MS Mobiles provides mobile repair services in Bengaluru
+                including screen repair, battery repair, charging repair,
+                display repair, speaker and microphone repair, software
+                problems, water damage and other common mobile problems.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How can I track my mobile repair?
+            </h3>
+
+            <p>
+                You can track your mobile repair using your Repair ID.
+                Open the Track Repair page, enter your Repair ID and
+                check the current repair status.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How much does mobile repair cost?
+            </h3>
+
+            <p>
+                Mobile repair cost depends on the type of problem and
+                the required repair. MS Mobiles provides estimated costs
+                for problems such as broken screens, battery issues,
+                charging problems, display problems and other repairs.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                What mobile brands does MS Mobiles support?
+            </h3>
+
+            <p>
+                MS Mobiles features popular mobile brands including
+                Apple, Samsung, OnePlus, Vivo and Oppo.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How do I book a mobile repair?
+            </h3>
+
+            <p>
+                You can book a mobile repair by selecting the Repair
+                option and submitting your mobile details, contact
+                information and repair problem.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= RATE OUR SERVICE ================= -->
+
+<section class="section">
+
+    <div class="rating-box">
+
+        <h2>
+            Rate Our Mobile Repair Service
+        </h2>
+
+        <p>
+            Share your experience with MS Mobiles.
+        </p>
+
+
+        <div class="stars">
+
+            <span class="star"
+                  data-rating="1">
+                ★
+            </span>
+
+            <span class="star"
+                  data-rating="2">
+                ★
+            </span>
+
+            <span class="star"
+                  data-rating="3">
+                ★
+            </span>
+
+            <span class="star"
+                  data-rating="4">
+                ★
+            </span>
+
+            <span class="star"
+                  data-rating="5">
+                ★
+            </span>
+
+        </div>
+
+
+        <input
+            type="text"
+            id="review-name"
+            placeholder="Your Name"
+        >
+
+
+        <textarea
+            id="review"
+            placeholder="Your Review"
+        ></textarea>
+
+
+        <button
+            type="button"
+            class="submit-btn"
+            onclick="submitReview()">
+
+            Submit Review
+
+        </button>
+
+
+        <div id="rating-message"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>MS Mobiles</strong>
+    </p>
+
+    <p>
+        Mobile Sales & Repair Services in Bengaluru
+    </p>
+
+    <p>
+        © 2026 MS Mobiles.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    /* ================= ESTIMATED REPAIR COST ================= */
+
+    const problemSelect =
+        document.getElementById("problem");
+
+    const estimatedCost =
+        document.getElementById("estimated-cost");
+
+    problemSelect.addEventListener(
+        "change",
+        function () {
+
+            if (this.value) {
+
+                estimatedCost.textContent =
+                    this.value;
+
+            } else {
+
+                estimatedCost.textContent =
+                    "--";
+
+            }
+
+        }
+    );
+
+
+    /* ================= RATING ================= */
+
+    const stars =
+        document.querySelectorAll(".star");
+
+    let selectedRating = 0;
+
+
+    stars.forEach(function(star) {
+
+        star.addEventListener(
+            "click",
+            function() {
+
+                selectedRating =
+                    this.getAttribute(
+                        "data-rating"
+                    );
+
+
+                stars.forEach(
+                    function(s) {
+
+                        if (
+                            s.getAttribute(
+                                "data-rating"
+                            ) <= selectedRating
+                        ) {
+
+                            s.classList.add(
+                                "active"
+                            );
+
+                        } else {
+
+                            s.classList.remove(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    });
+
+
+    /* ================= SUBMIT REVIEW ================= */
+
+    function submitReview() {
+
+        const name =
+            document.getElementById(
+                "review-name"
+            ).value;
+
+        const review =
+            document.getElementById(
+                "review"
+            ).value;
+
+        const message =
+            document.getElementById(
+                "rating-message"
+            );
+
+
+        if (selectedRating == 0) {
+
+            message.style.color =
+                "#dc2626";
+
+            message.textContent =
+                "Please select a rating.";
+
+            return;
+
+        }
+
+
+        if (name.trim() === "") {
+
+            message.style.color =
+                "#dc2626";
+
+            message.textContent =
+                "Please enter your name.";
+
+            return;
+
+        }
+
+
+        if (review.trim() === "") {
+
+            message.style.color =
+                "#dc2626";
+
+            message.textContent =
+                "Please enter your review.";
+
+            return;
+
+        }
+
+
+        message.style.color =
+            "#16a34a";
+
+        message.textContent =
+            "Thank you for your review!";
+
+
+        document.getElementById(
+            "review-name"
+        ).value = "";
+
+
+        document.getElementById(
+            "review"
+        ).value = "";
+
+
+        stars.forEach(
+            function(star) {
+
+                star.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        selectedRating = 0;
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

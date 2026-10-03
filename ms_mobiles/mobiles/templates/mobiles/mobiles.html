@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mobiles | MS Mobiles</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        nav {
+            background: #111827;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #dbeafe;
+            font-size: 17px;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* SEARCH AND FILTER */
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .search-box form {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 750px;
+        }
+
+        .search-box input,
+        .search-box select {
+            padding: 14px 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+        }
+
+        .search-box input {
+            flex: 1;
+        }
+
+        .search-box input:focus,
+        .search-box select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .search-box select {
+            min-width: 150px;
+            cursor: pointer;
+        }
+
+        .search-box button {
+            padding: 14px 22px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .search-box button:hover {
+            background: #1d4ed8;
+        }
+
+        /* MOBILE GRID */
+
+        .mobile-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .mobile-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s;
+        }
+
+        .mobile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mobile-image {
+            height: 220px;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+        }
+
+        .mobile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mobile-content {
+            padding: 22px;
+        }
+
+        .mobile-content h3 {
+            color: #111827;
+            margin-bottom: 6px;
+            font-size: 21px;
+        }
+
+        .brand {
+            color: #6b7280;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #16a34a;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .details {
+            color: #374151;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        /* VIEW DETAILS BUTTON */
+
+        .view-button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 11px 20px;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .view-button:hover {
+            background: #1d4ed8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111827;
+            color: white;
+            padding: 40px 6%;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        footer h2 {
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #d1d5db;
+            margin: 8px 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .mobile-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .search-box form {
+                flex-wrap: wrap;
+            }
+
+            .search-box input {
+                min-width: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .mobile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box form {
+                flex-direction: column;
+            }
+
+            .search-box input,
+            .search-box select,
+            .search-box button {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h2>📱 MS Mobiles</h2>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/mobiles/">
+                Mobiles
+            </a>
+
+            <a href="/repair/">
+                Repair
+            </a>
+
+            <a href="/register/">
+                Register
+            </a>
+
+            <a href="#">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Our Mobiles</h1>
+
+        <p>
+            Explore the latest smartphones available at MS Mobiles
+        </p>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Available Mobiles</h2>
+
+            <p>
+                Choose from our collection of smartphones
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH + BRAND FILTER -->
+
+        <div class="search-box">
+
+            <form method="GET" action="/mobiles/">
+
+                <input
+                    type="text"
+                    name="search"
+                    value="{{ search }}"
+                    placeholder="🔍 Search mobile by brand or model..."
+                >
+
+                <select name="brand">
+
+                    <option value="">
+                        All Brands
+                    </option>
+
+                    {% for b in brands %}
+
+                        <option
+                            value="{{ b }}"
+                            {% if selected_brand == b %}
+                                selected
+                            {% endif %}
+                        >
+                            {{ b }}
+                        </option>
+
+                    {% endfor %}
+
+                </select>
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- MOBILE PRODUCTS -->
+
+        <div class="mobile-grid">
+
+            {% for mobile in mobiles %}
+
+                <div class="mobile-card">
+
+
+                    <!-- MOBILE IMAGE -->
+
+                    <div class="mobile-image">
+
+                        {% if mobile.image %}
+
+                            <img
+                                src="{{ mobile.image.url }}"
+                                alt="{{ mobile.brand }} {{ mobile.model_name }}"
+                            >
+
+                        {% else %}
+
+                            📱
+
+                        {% endif %}
+
+                    </div>
+
+
+                    <!-- MOBILE INFORMATION -->
+
+                    <div class="mobile-content">
+
+                        <h3>
+                            {{ mobile.model_name }}
+                        </h3>
+
+                        <div class="brand">
+                            {{ mobile.brand }}
+                        </div>
+
+                        <div class="price">
+                            ₹{{ mobile.price }}
+                        </div>
+
+                        <div class="details">
+
+                            <strong>RAM:</strong>
+                            {{ mobile.ram }}
+
+                            <br>
+
+                            <strong>Storage:</strong>
+                            {{ mobile.storage }}
+
+                        </div>
+
+                        <div class="description">
+                            {{ mobile.description }}
+                        </div>
+
+
+                        <!-- VIEW DETAILS -->
+
+                        <a
+                            href="/mobiles/{{ mobile.id }}/"
+                            class="view-button"
+                        >
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <p style="text-align:center; grid-column:1/-1;">
+                    No mobiles found.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>📱 MS Mobiles</h2>
+
+        <p>
+            Your trusted destination for mobiles and repair services.
+        </p>
+
+        <p>
+            © 2026 MS Mobiles. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

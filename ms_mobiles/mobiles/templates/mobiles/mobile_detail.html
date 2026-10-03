@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>{{ mobile.brand }} {{ mobile.model_name }} | MS Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: #111827;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* MAIN */
+
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: 60px auto;
+        }
+
+        .product-details {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* IMAGE */
+
+        .mobile-image {
+            height: 450px;
+            background: #eef2ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            font-size: 100px;
+        }
+
+        .mobile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* INFORMATION */
+
+        .mobile-info h1 {
+            color: #111827;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .brand {
+            color: #6b7280;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            color: #16a34a;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .specifications {
+            border-top: 1px solid #e5e7eb;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .specifications p {
+            margin: 10px 0;
+            color: #374151;
+        }
+
+        .description {
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        /* BUTTONS */
+
+        .order-button {
+            display: inline-block;
+            background: #16a34a;
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .order-button:hover {
+            background: #15803d;
+        }
+
+        .repair-button {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .repair-button:hover {
+            background: #1d4ed8;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #e5e7eb;
+            color: #111827;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+        }
+
+        .back-button:hover {
+            background: #d1d5db;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111827;
+            color: white;
+            padding: 40px 6%;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        footer h2 {
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #d1d5db;
+            margin: 8px 0;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .product-details {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+
+            .mobile-image {
+                height: 350px;
+            }
+
+            .mobile-info h1 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h2>📱 MS Mobiles</h2>
+
+        <div>
+
+            <a href="/">Home</a>
+
+            <a href="/mobiles/">
+                Mobiles
+            </a>
+
+            <a href="/repair/">
+                Repair
+            </a>
+
+            <a href="/register/">
+                Register
+            </a>
+
+            <a href="/login/">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PRODUCT DETAILS -->
+
+    <div class="container">
+
+        <div class="product-details">
+
+
+            <!-- MOBILE IMAGE -->
+
+            <div class="mobile-image">
+
+                {% if mobile.image %}
+
+                    <img
+                        src="{{ mobile.image.url }}"
+                        alt="{{ mobile.brand }} {{ mobile.model_name }}"
+                    >
+
+                {% else %}
+
+                    📱
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- MOBILE INFORMATION -->
+
+            <div class="mobile-info">
+
+                <h1>
+                    {{ mobile.model_name }}
+                </h1>
+
+                <div class="brand">
+                    {{ mobile.brand }}
+                </div>
+
+                <div class="price">
+                    ₹{{ mobile.price }}
+                </div>
+
+
+                <!-- SPECIFICATIONS -->
+
+                <div class="specifications">
+
+                    <p>
+                        <strong>RAM:</strong>
+                        {{ mobile.ram }}
+                    </p>
+
+                    <p>
+                        <strong>Storage:</strong>
+                        {{ mobile.storage }}
+                    </p>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="description">
+
+                    <strong>Description</strong>
+
+                    <br><br>
+
+                    {{ mobile.description }}
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <a
+                    href="{% url 'place_order' mobile.id %}"
+                    class="order-button"
+                >
+                    🛒 Place Order
+                </a>
+
+                <a
+                    href="/repair/"
+                    class="repair-button"
+                >
+                    🔧 Repair Your Mobile
+                </a>
+
+                <a
+                    href="/mobiles/"
+                    class="back-button"
+                >
+                    ← Back to Mobiles
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>📱 MS Mobiles</h2>
+
+        <p>
+            Your trusted destination for mobiles and repair services.
+        </p>
+
+        <p>
+            © 2026 MS Mobiles. All rights reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
