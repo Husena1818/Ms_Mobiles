@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
+
 from .models import Mobile
 
 
@@ -27,7 +28,7 @@ class MobileSitemap(Sitemap):
     changefreq = "weekly"
 
     def items(self):
-        return Mobile.objects.all()
+        return Mobile.objects.all().order_by("id")
 
     def location(self, obj):
         return reverse("mobile_detail", args=[obj.id])
