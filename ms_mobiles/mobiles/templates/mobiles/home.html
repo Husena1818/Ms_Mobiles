@@ -13,103 +13,12 @@
     <title>Mobile Repair in Bengaluru | MS Mobiles</title>
 
     <meta name="description"
-          content="MS Mobiles provides mobile repair services in Bengaluru for screen, battery, charging, display, speaker, software, water damage and other mobile problems.">
+          content="MS Mobiles provides mobile repair services in Bengaluru including screen, battery, charging, speaker, display and other mobile repairs.">
 
     <meta name="robots"
           content="index, follow">
 
-    <meta name="author"
-          content="MS Mobiles">
-
-    <!-- ================= OPEN GRAPH ================= -->
-
-    <meta property="og:title"
-          content="Mobile Repair in Bengaluru | MS Mobiles">
-
-    <meta property="og:description"
-          content="MS Mobiles provides mobile repair services in Bengaluru for screen, battery, charging, display, speaker, software, water damage and other mobile problems.">
-
-    <meta property="og:type"
-          content="website">
-
-    <meta property="og:url"
-          content="http://127.0.0.1:8000/">
-
-    <meta property="og:site_name"
-          content="MS Mobiles">
-
-    <!-- ================= TWITTER / X ================= -->
-
-    <meta name="twitter:card"
-          content="summary">
-
-    <meta name="twitter:title"
-          content="Mobile Repair in Bengaluru | MS Mobiles">
-
-    <meta name="twitter:description"
-          content="Mobile repair services in Bengaluru for screen, battery, charging, display, speaker and other mobile problems.">
-
-    <!-- ================= STRUCTURED DATA ================= -->
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-
-            {
-                "@type": [
-                    "LocalBusiness",
-                    "MobilePhoneStore"
-                ],
-                "@id": "http://127.0.0.1:8000/#business",
-                "name": "MS Mobiles",
-                "description": "MS Mobiles provides mobile sales and mobile repair services in Bengaluru.",
-                "url": "http://127.0.0.1:8000/",
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Bengaluru"
-                },
-                "knowsAbout": [
-                    "Mobile phone repair",
-                    "Screen repair",
-                    "Battery repair",
-                    "Charging problem repair",
-                    "Display repair",
-                    "Speaker and microphone repair",
-                    "Software problems",
-                    "Water damage repair",
-                    "Mobile phone sales"
-                ]
-            },
-
-            {
-                "@type": "WebSite",
-                "@id": "http://127.0.0.1:8000/#website",
-                "name": "MS Mobiles",
-                "url": "http://127.0.0.1:8000/",
-                "publisher": {
-                    "@id": "http://127.0.0.1:8000/#business"
-                }
-            },
-
-            {
-                "@type": "Service",
-                "@id": "http://127.0.0.1:8000/#mobile-repair-service",
-                "name": "Mobile Repair in Bengaluru",
-                "description": "Mobile phone repair services in Bengaluru including screen, battery, charging, display, speaker, software and water damage repairs.",
-                "provider": {
-                    "@id": "http://127.0.0.1:8000/#business"
-                },
-                "areaServed": {
-                    "@type": "City",
-                    "name": "Bengaluru"
-                },
-                "serviceType": "Mobile Phone Repair"
-            }
-
-        ]
-    }
-    </script>
+    <meta name="google-site-verification" content="OWGEqmohqeFYE0EyWSa6cdgkztmD0Fsu4RjwDHMV-Mo" />
 
     <!-- ================= CSS ================= -->
 
@@ -248,15 +157,6 @@
             margin-bottom: 40px;
         }
 
-        .section-intro {
-            max-width: 850px;
-            margin: -20px auto 40px;
-            text-align: center;
-            color: #6b7280;
-            line-height: 1.7;
-            font-size: 17px;
-        }
-
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -293,36 +193,6 @@
             color: #2563eb;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        /* ================= REPAIR INFORMATION ================= */
-
-        .repair-info {
-            background: #ffffff;
-        }
-
-        .repair-info-box {
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .repair-info-box h2 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .repair-info-box p {
-            color: #6b7280;
-            line-height: 1.8;
-            margin-bottom: 18px;
-            font-size: 17px;
-        }
-
-        .repair-list {
-            margin: 20px 0 0 20px;
-            color: #4b5563;
-            line-height: 1.9;
         }
 
         /* ================= BRANDS ================= */
@@ -532,10 +402,6 @@
                 font-size: 16px;
             }
 
-            .section-title {
-                font-size: 27px;
-            }
-
         }
 
     </style>
@@ -637,10 +503,9 @@
         </h1>
 
         <p>
-            MS Mobiles provides professional mobile repair
-            services in Bengaluru for common smartphone problems
-            including screen, battery, charging, display and
-            speaker issues.
+            Your trusted destination for mobile phones,
+            accessories, and professional mobile repair
+            services in Bengaluru.
         </p>
 
         <div class="hero-buttons">
@@ -673,12 +538,6 @@
     <h2 class="section-title">
         Our Mobile Repair and Mobile Services
     </h2>
-
-    <p class="section-intro">
-        MS Mobiles offers mobile sales and mobile repair services
-        in Bengaluru. Customers can explore smartphones, book a
-        repair, and track the progress of a repair using a Repair ID.
-    </p>
 
 
     <div class="cards">
@@ -721,9 +580,9 @@
             </h3>
 
             <p>
-                Get mobile phone repair services for screen,
-                battery, charging, display, speaker and other
-                common mobile problems.
+                Get professional mobile repair services
+                for screen, battery, charging, display,
+                speaker and other mobile problems.
             </p>
 
             <a href="{% url 'repair' %}">
@@ -762,70 +621,6 @@
 </section>
 
 
-<!-- ================= REPAIR INFORMATION ================= -->
-
-<section class="section repair-info">
-
-    <div class="repair-info-box">
-
-        <h2>
-            Mobile Phone Repair Services in Bengaluru
-        </h2>
-
-        <p>
-            Mobile phones can develop different problems during
-            everyday use. MS Mobiles provides repair services for
-            common smartphone issues in Bengaluru.
-        </p>
-
-        <p>
-            Depending on the problem, customers can book services
-            for screen damage, battery issues, charging problems,
-            display problems, speaker or microphone issues,
-            software problems and other mobile repairs.
-        </p>
-
-        <ul class="repair-list">
-
-            <li>
-                Mobile screen repair
-            </li>
-
-            <li>
-                Mobile battery repair and replacement
-            </li>
-
-            <li>
-                Mobile charging problem repair
-            </li>
-
-            <li>
-                Mobile display repair
-            </li>
-
-            <li>
-                Mobile speaker and microphone repair
-            </li>
-
-            <li>
-                Mobile software problem assistance
-            </li>
-
-            <li>
-                Water damage repair
-            </li>
-
-            <li>
-                Other mobile repair problems
-            </li>
-
-        </ul>
-
-    </div>
-
-</section>
-
-
 <!-- ================= BRANDS ================= -->
 
 <section class="section">
@@ -833,11 +628,6 @@
     <h2 class="section-title">
         Popular Mobile Brands
     </h2>
-
-    <p class="section-intro">
-        MS Mobiles features popular smartphone brands including
-        Apple, Samsung, OnePlus, Vivo and Oppo.
-    </p>
 
 
     <div class="brands">
@@ -906,8 +696,6 @@
 
         <p>
             Select your mobile problem to see an estimated cost.
-            The actual repair cost may depend on the device and
-            repair requirement.
         </p>
 
         <select id="problem">
@@ -976,25 +764,19 @@
 
     <div class="faq-box">
 
-
         <div class="faq-item">
-
             <h3>
                 What mobile repair services are available in Bengaluru?
             </h3>
 
             <p>
                 MS Mobiles provides mobile repair services in Bengaluru
-                including screen repair, battery repair, charging repair,
-                display repair, speaker and microphone repair, software
-                problems, water damage and other common mobile problems.
+                including screen, battery, charging, display, speaker,
+                software, water damage and other mobile problems.
             </p>
-
         </div>
 
-
         <div class="faq-item">
-
             <h3>
                 How can I track my mobile repair?
             </h3>
@@ -1004,28 +786,22 @@
                 Open the Track Repair page, enter your Repair ID and
                 check the current repair status.
             </p>
-
         </div>
 
-
         <div class="faq-item">
-
             <h3>
                 How much does mobile repair cost?
             </h3>
 
             <p>
-                Mobile repair cost depends on the type of problem and
-                the required repair. MS Mobiles provides estimated costs
-                for problems such as broken screens, battery issues,
-                charging problems, display problems and other repairs.
+                The repair cost depends on the type of mobile problem.
+                MS Mobiles provides estimated costs for problems such as
+                broken screens, battery issues, charging problems,
+                display problems and other repairs.
             </p>
-
         </div>
 
-
         <div class="faq-item">
-
             <h3>
                 What mobile brands does MS Mobiles support?
             </h3>
@@ -1034,24 +810,18 @@
                 MS Mobiles features popular mobile brands including
                 Apple, Samsung, OnePlus, Vivo and Oppo.
             </p>
-
         </div>
 
-
         <div class="faq-item">
-
             <h3>
                 How do I book a mobile repair?
             </h3>
 
             <p>
                 You can book a mobile repair by selecting the Repair
-                option and submitting your mobile details, contact
-                information and repair problem.
+                option and submitting your mobile and repair details.
             </p>
-
         </div>
-
 
     </div>
 
