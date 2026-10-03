@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Repair | MS Mobiles</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* Navbar */
+        nav {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #dbeafe;
+        }
+
+        /* Main */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #6b7280;
+        }
+
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .service-card .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .service-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Form */
+        .form-box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .form-box h2 {
+            margin-bottom: 25px;
+            color: #111827;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        /* Radio buttons */
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .radio-option {
+            border: 1px solid #d1d5db;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #f9fafb;
+        }
+
+        .radio-option:hover {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .radio-option input {
+            width: auto;
+            margin-right: 6px;
+        }
+
+        /* Button */
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #dcfce7;
+            color: #166534;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Track Repair */
+        .track-box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .track-box input {
+            max-width: 500px;
+            margin: 15px auto;
+            display: block;
+        }
+
+        .track-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            background: #111827;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .track-btn:hover {
+            background: #374151;
+        }
+
+        /* Cost */
+        .cost-box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .cost {
+            font-size: 35px;
+            font-weight: bold;
+            color: #16a34a;
+            margin-top: 15px;
+        }
+
+        /* Review */
+        .review-box {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .stars {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .stars span {
+            font-size: 35px;
+            color: #f59e0b;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            color: #d1d5db;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-box,
+            .track-box,
+            .cost-box,
+            .review-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+
+        <h2>MS Mobiles</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/repair/">Repair</a>
+            <a href="/register/">Register</a>
+            <a href="#">Login</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>Mobile Repair Service</h1>
+
+        <p>
+            Professional and reliable repair services for your mobile phone
+        </p>
+
+    </section>
+
+
+    <div class="container">
+
+
+        <!-- Success Message -->
+
+        {% if success %}
+
+            <div class="success-message">
+
+                Repair request submitted successfully!
+
+                <br>
+
+                Your Repair ID is:
+                <strong>#{{ repair_request.id }}</strong>
+
+            </div>
+
+        {% endif %}
+
+
+        <!-- Repair Services -->
+
+        <div class="section-title">
+
+            <h2>Our Repair Services</h2>
+
+            <p>
+                We handle different types of mobile phone problems
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+            <div class="service-card">
+                <div class="icon">📱</div>
+                <h3>Broken Screen</h3>
+                <p>Screen replacement and display repair.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🔋</div>
+                <h3>Battery Issue</h3>
+                <p>Battery replacement and battery-related problems.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🔌</div>
+                <h3>Charging Problem</h3>
+                <p>Charging port and charging-related repairs.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🔊</div>
+                <h3>Speaker / Mic</h3>
+                <p>Speaker, microphone and audio problems.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">⚙️</div>
+                <h3>Software Problem</h3>
+                <p>Software errors, updates and performance issues.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🖥️</div>
+                <h3>Display Problem</h3>
+                <p>Display, touch and screen-related problems.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">💧</div>
+                <h3>Water Damage</h3>
+                <p>Inspection and repair for water-damaged phones.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="icon">🔧</div>
+                <h3>Motherboard</h3>
+                <p>Advanced motherboard diagnosis and repair.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Book Repair -->
+
+        <div class="section-title">
+
+            <h2>Book a Repair</h2>
+
+            <p>
+                Enter your mobile details and repair problem
+            </p>
+
+        </div>
+
+
+        <div class="form-box">
+
+            <form
+                method="POST"
+                action="/repair/"
+                enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+
+                <!-- Customer Details -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Customer Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="customer_name"
+                            placeholder="Enter your name"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            name="phone_number"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Mobile Details -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Brand
+                        </label>
+
+                        <input
+                            type="text"
+                            name="mobile_brand"
+                            placeholder="Example: Apple, Samsung"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Mobile Model
+                        </label>
+
+                        <input
+                            type="text"
+                            name="mobile_model"
+                            placeholder="Example: iPhone 15 Pro"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IMEI -->
+
+                <div class="form-group">
+
+                    <label>
+                        IMEI Number
+                    </label>
+
+                    <input
+                        type="text"
+                        name="imei_number"
+                        placeholder="Enter IMEI number">
+
+                </div>
+
+
+                <!-- Problem Type -->
+
+                <div class="form-group">
+
+                    <label>
+                        Select Problem
+                    </label>
+
+
+                    <div class="radio-group">
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Broken Screen"
+                                required>
+
+                            Broken Screen
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Battery Issue">
+
+                            Battery Issue
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Charging Problem">
+
+                            Charging Problem
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Speaker / Mic">
+
+                            Speaker / Mic
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Software Problem">
+
+                            Software Problem
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Display Problem">
+
+                            Display Problem
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Water Damage">
+
+                            Water Damage
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Motherboard Problem">
+
+                            Motherboard Problem
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="problem_type"
+                                value="Other">
+
+                            Other
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- Problem Description -->
+
+                <div class="form-group">
+
+                    <label>
+                        Describe the Problem
+                    </label>
+
+                    <textarea
+                        name="problem"
+                        placeholder="Explain the problem with your mobile..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- Phone Photo -->
+
+                <div class="form-group">
+
+                    <label>
+                        Upload Phone Photo
+                    </label>
+
+                    <input
+                        type="file"
+                        name="phone_photo"
+                        accept="image/*">
+
+                </div>
+
+
+                <!-- Service Type -->
+
+                <div class="form-group">
+
+                    <label>
+                        Service Type
+                    </label>
+
+
+                    <div class="radio-group">
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="service_type"
+                                value="Pickup & Drop-off"
+                                required>
+
+                            Pickup & Drop-off
+
+                        </label>
+
+
+                        <label class="radio-option">
+
+                            <input
+                                type="radio"
+                                name="service_type"
+                                value="Shop Visit">
+
+                            Shop Visit
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Submit Repair Request
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- Track Repair -->
+
+        <div class="section-title">
+
+            <h2>Track Your Repair</h2>
+
+            <p>
+                Enter your Repair ID to check the current status
+            </p>
+
+        </div>
+
+
+        <div class="track-box">
+
+            <input
+                type="text"
+                placeholder="Enter Repair ID">
+
+            <button class="track-btn">
+                Track Repair
+            </button>
+
+        </div>
+
+
+        <!-- Estimated Cost -->
+
+        <div class="section-title">
+
+            <h2>Estimated Repair Cost</h2>
+
+            <p>
+                Your estimated repair cost will appear here
+            </p>
+
+        </div>
+
+
+        <div class="cost-box">
+
+            <p>
+                Estimated Cost
+            </p>
+
+            <div class="cost">
+                ₹ --
+            </div>
+
+        </div>
+
+
+        <!-- Rating & Review -->
+
+        <div class="section-title">
+
+            <h2>Rate Our Service</h2>
+
+            <p>
+                Share your experience with MS Mobiles
+            </p>
+
+        </div>
+
+
+        <div class="review-box">
+
+            <div class="stars">
+
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Review
+                </label>
+
+                <textarea
+                    placeholder="Write your review..."></textarea>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="submit-btn">
+
+                Submit Review
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>
+            MS Mobiles
+        </h3>
+
+        <p>
+            Your trusted destination for mobiles and professional repair services.
+        </p>
+
+        <p style="margin-top: 10px;">
+
+            © 2026 MS Mobiles. All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+</body>
+</html>

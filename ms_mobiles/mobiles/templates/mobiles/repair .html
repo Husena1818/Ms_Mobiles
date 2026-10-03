@@ -1,0 +1,23 @@
+{% if success %}
+
+<div class="success-box">
+
+    <h2>Repair request submitted successfully! ✅</h2>
+
+    <p>Your Repair ID is:</p>
+
+    <div class="repair-id">
+        #{{ repair_id }}
+    </div>
+
+    <p>
+        Please keep this Repair ID safe to track your repair.
+    </p>
+
+    <a href="{% url 'track_repair' %}" class="track-button">
+        Track Repair
+    </a>
+
+</div>
+
+{% endif %}

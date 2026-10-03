@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Repair - MS Mobiles</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+        }
+
+        .navbar {
+            background: #111827;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .track-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .track-form {
+            display: flex;
+            gap: 15px;
+        }
+
+        .track-form input {
+            flex: 1;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .track-form button {
+            padding: 15px 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .error {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fee2e2;
+            color: #991b1b;
+            border-radius: 8px;
+        }
+
+        .result {
+            margin-top: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .main-message {
+            text-align: center;
+            padding: 25px;
+            background: #eff6ff;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .main-message .icon {
+            font-size: 50px;
+        }
+
+        .main-message h2 {
+            margin: 10px 0;
+            color: #1e3a8a;
+        }
+
+        .status-list {
+            margin-top: 30px;
+        }
+
+        .status-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background: #f3f4f6;
+        }
+
+        .status-step.active {
+            background: #dcfce7;
+        }
+
+        .status-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .status-step.active .status-icon {
+            background: #16a34a;
+            color: white;
+        }
+
+        .details {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 10px;
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            .track-form {
+                flex-direction: column;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        MS Mobiles
+    </div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/mobiles/">Mobiles</a>
+        <a href="/repair/">Repair</a>
+        <a href="/track-repair/">Track Repair</a>
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="title">
+        <h1>📱 Track Your Repair</h1>
+
+        <p>
+            Enter your Repair ID to check your mobile repair progress.
+        </p>
+    </div>
+
+
+    <div class="track-box">
+
+        <form method="GET" action="{% url 'track_repair' %}" class="track-form">
+
+            <input
+                type="number"
+                name="repair_id"
+                placeholder="Enter Repair ID"
+                min="1"
+                required
+            >
+
+            <button type="submit">
+                Track Repair
+            </button>
+
+        </form>
+
+    </div>
+
+
+    {% if error %}
+
+        <div class="error">
+            {{ error }}
+        </div>
+
+    {% endif %}
+
+
+    {% if repair %}
+
+    <div class="result">
+
+        <div class="main-message">
+
+            {% if repair.status == "Received" %}
+
+                <div class="icon">📦</div>
+
+                <h2>Your mobile has been received</h2>
+
+                <p>
+                    Your mobile has been received.
+                    Our technician will inspect it shortly.
+                </p>
+
+
+            {% elif repair.status == "Diagnosing" %}
+
+                <div class="icon">🔍</div>
+
+                <h2>Your mobile is being inspected</h2>
+
+                <p>
+                    Our technician is checking the problem
+                    with your mobile.
+                </p>
+
+
+            {% elif repair.status == "Repairing" %}
+
+                <div class="icon">🔧</div>
+
+                <h2>Your mobile repair is in progress</h2>
+
+                <p>
+                    Our technician is currently working
+                    on your mobile.
+                </p>
+
+
+            {% elif repair.status == "Quality Check" %}
+
+                <div class="icon">✅</div>
+
+                <h2>Your mobile repair is completed</h2>
+
+                <p>
+                    Your mobile is undergoing a final
+                    quality check before delivery.
+                </p>
+
+
+            {% elif repair.status == "Ready for Pickup" %}
+
+                <div class="icon">🎉</div>
+
+                <h2>Your mobile is ready</h2>
+
+                <p>
+                    Your mobile has been repaired and is
+                    ready for pickup.
+                </p>
+
+
+            {% elif repair.status == "Out for Delivery" %}
+
+                <div class="icon">🚚</div>
+
+                <h2>Your mobile is out for delivery</h2>
+
+                <p>
+                    The delivery person is ready to deliver
+                    your mobile.
+                </p>
+
+
+            {% elif repair.status == "Delivered" %}
+
+                <div class="icon">🎉</div>
+
+                <h2>Your mobile has been delivered</h2>
+
+                <p>
+                    Your mobile has been delivered successfully.
+                    Thank you for choosing MS Mobiles!
+                </p>
+
+            {% endif %}
+
+        </div>
+
+
+        <h2>Repair Progress</h2>
+
+        <div class="status-list">
+
+            <div class="status-step
+                {% if repair.status == 'Received' or repair.status == 'Diagnosing' or repair.status == 'Repairing' or repair.status == 'Quality Check' or repair.status == 'Ready for Pickup' or repair.status == 'Out for Delivery' or repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">1</div>
+
+                <strong>Repair Received</strong>
+
+            </div>
+
+
+            <div class="status-step
+                {% if repair.status == 'Diagnosing' or repair.status == 'Repairing' or repair.status == 'Quality Check' or repair.status == 'Ready for Pickup' or repair.status == 'Out for Delivery' or repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">2</div>
+
+                <strong>Diagnosis</strong>
+
+            </div>
+
+
+            <div class="status-step
+                {% if repair.status == 'Repairing' or repair.status == 'Quality Check' or repair.status == 'Ready for Pickup' or repair.status == 'Out for Delivery' or repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">3</div>
+
+                <strong>Repair in Progress</strong>
+
+            </div>
+
+
+            <div class="status-step
+                {% if repair.status == 'Quality Check' or repair.status == 'Ready for Pickup' or repair.status == 'Out for Delivery' or repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">4</div>
+
+                <strong>Quality Check</strong>
+
+            </div>
+
+
+            <div class="status-step
+                {% if repair.status == 'Ready for Pickup' or repair.status == 'Out for Delivery' or repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">5</div>
+
+                <strong>Ready for Pickup</strong>
+
+            </div>
+
+
+            <div class="status-step
+                {% if repair.status == 'Out for Delivery' or repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">6</div>
+
+                <strong>Out for Delivery</strong>
+
+            </div>
+
+
+            <div class="status-step
+                {% if repair.status == 'Delivered' %}
+                active
+                {% endif %}
+            ">
+
+                <div class="status-icon">7</div>
+
+                <strong>Delivered</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="details">
+
+            <h3>Repair Details</h3>
+
+            <p>
+                <strong>Repair ID:</strong>
+                #{{ repair.id }}
+            </p>
+
+            <p>
+                <strong>Mobile:</strong>
+                {{ repair.mobile_brand }}
+                {{ repair.mobile_model }}
+            </p>
+
+            <p>
+                <strong>Problem:</strong>
+                {{ repair.problem_type }}
+            </p>
+
+            <p>
+                <strong>Service Type:</strong>
+                {{ repair.service_type }}
+            </p>
+
+            <p>
+                <strong>Current Status:</strong>
+                {{ repair.status }}
+            </p>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
