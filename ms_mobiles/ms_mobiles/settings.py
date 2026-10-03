@@ -16,15 +16,31 @@ DEBUG = os.environ.get(
     'True'
 ).lower() == 'true'
 
+
 ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    'ms-mobiles-dncs.onrender.com',
+    host.strip()
+    for host in os.environ.get(
+        'DJANGO_ALLOWED_HOSTS',
+        '127.0.0.1,localhost'
+    ).split(',')
+    if host.strip()
 ]
 
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get(
+    'RENDER_EXTERNAL_HOSTNAME'
+)
+
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(
+        RENDER_EXTERNAL_HOSTNAME
+    )
+
+
 CSRF_TRUSTED_ORIGINS = [
-    'https://ms-mobiles-dncs.onrender.com',
+    'https://ms-mobiles-0c43.onrender.com',
 ]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -96,11 +112,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Asia/Kolkata'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -108,7 +121,6 @@ STATIC_URL = 'static/'
 
 
 MEDIA_URL = '/media/'
-
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
@@ -116,26 +128,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
 EMAIL_HOST = 'smtp.gmail.com'
-
 EMAIL_PORT = 587
-
 EMAIL_USE_TLS = True
+
 
 EMAIL_HOST_USER = os.environ.get(
     'EMAIL_HOST_USER',
     ''
 )
 
+
 EMAIL_HOST_PASSWORD = os.environ.get(
     'EMAIL_HOST_PASSWORD',
     ''
 )
 
+
 DEFAULT_FROM_EMAIL = os.environ.get(
     'DEFAULT_FROM_EMAIL',
     EMAIL_HOST_USER
 )
-
-
