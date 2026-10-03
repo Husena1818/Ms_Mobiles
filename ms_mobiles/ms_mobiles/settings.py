@@ -18,9 +18,9 @@ DEBUG = os.environ.get(
 
 
 ALLOWED_HOSTS = [
-    "ms-mobiles-dncs.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    '127.0.0.1',
+    'localhost',
+    'ms-mobiles-dncs.onrender.com',
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://ms-mobiles-dncs.onrender.com",
