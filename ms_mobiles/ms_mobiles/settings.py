@@ -17,10 +17,14 @@ DEBUG = os.environ.get(
 ).lower() == 'true'
 
 
-ALLOWED_HOSTS = os.environ.get(
-    'DJANGO_ALLOWED_HOSTS',
-    '127.0.0.1,localhost'
-).split(',')
+ALLOWED_HOSTS = [
+    "ms-mobiles-dncs.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://ms-mobiles-dncs.onrender.com",
+]
 
 
 INSTALLED_APPS = [
