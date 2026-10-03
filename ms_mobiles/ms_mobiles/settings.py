@@ -1,14 +1,26 @@
 from pathlib import Path
+import os
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = 'django-insecure-change-this-later'
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-development-key'
+)
 
-DEBUG = True
 
-ALLOWED_HOSTS = []
+DEBUG = os.environ.get(
+    'DJANGO_DEBUG',
+    'True'
+).lower() == 'true'
+
+
+ALLOWED_HOSTS = os.environ.get(
+    'DJANGO_ALLOWED_HOSTS',
+    '127.0.0.1,localhost'
+).split(',')
 
 
 INSTALLED_APPS = [
@@ -108,8 +120,27 @@ EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'reddyummadi@gmail.com'
+EMAIL_HOST_USER = os.environ.get(
+    'EMAIL_HOST_USER',
+    ''
+)
 
-EMAIL_HOST_PASSWORD = 'your oeas ukoq yvsv'
+EMAIL_HOST_PASSWORD = os.environ.get(
+    'EMAIL_HOST_PASSWORD',
+    ''
+)
 
-DEFAULT_FROM_EMAIL = 'reddyummadi@gmail.com'
+DEFAULT_FROM_EMAIL = os.environ.get(
+    'DEFAULT_FROM_EMAIL',
+    EMAIL_HOST_USER
+)
+
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get(
+        'CSRF_TRUSTED_ORIGINS',
+        ''
+    ).split(',')
+    if origin.strip()
+]
