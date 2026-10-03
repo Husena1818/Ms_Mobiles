@@ -1,0 +1,2355 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MS Mobiles | Mobile Repair & Accessories in Bengaluru</title>
+
+    <meta
+        name="description"
+        content="MS Mobiles provides professional mobile repair services and quality mobile accessories in Bengaluru. Book screen, battery, charging and other mobile repairs."
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <meta
+        name="author"
+        content="MS Mobiles"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b1f3a"
+    >
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #222;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            background: #0b1f3a;
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #4da3ff;
+        }
+
+        .login-btn {
+            background: #1976d2;
+            padding: 9px 18px;
+            border-radius: 6px;
+        }
+
+        .login-btn:hover {
+            color: white !important;
+            background: #1565c0;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            background: linear-gradient(
+                135deg,
+                #0b1f3a,
+                #1976d2,
+                #2196f3
+            );
+
+            color: white;
+            text-align: center;
+            padding: 105px 20px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: white;
+            color: #1976d2;
+        }
+
+        .primary:hover {
+            background: #eaf4ff;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            background: #0b1f3a;
+            color: white;
+        }
+
+        .secondary:hover {
+            background: #07162a;
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 16px;
+        }
+
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.8;
+            color: #555;
+            font-size: 17px;
+        }
+
+
+        /* ================= BRANDS ================= */
+
+        .brands-section {
+            background: #f5f7fb;
+        }
+
+        .brands {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .brand {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+
+            transition: 0.3s;
+        }
+
+        .brand:hover {
+            transform: translateY(-4px);
+        }
+
+        .brand h3 {
+            color: #0b1f3a;
+            margin-bottom: 8px;
+        }
+
+        .brand p {
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* ================= ACCESSORIES ================= */
+
+        .accessories-section {
+            background: white;
+        }
+
+        .accessories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .accessory-card {
+            background: #f8f9fb;
+            border-radius: 12px;
+            overflow: hidden;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .accessory-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 8px 22px rgba(0,0,0,0.12);
+        }
+
+        .accessory-image {
+            width: 100%;
+            height: 210px;
+
+            object-fit: cover;
+            display: block;
+
+            background: #eaf1f8;
+        }
+
+        .accessory-no-image {
+            height: 210px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf1f8;
+
+            font-size: 55px;
+        }
+
+        .accessory-content {
+            padding: 20px;
+        }
+
+        .accessory-content h3 {
+            color: #0b1f3a;
+            margin-bottom: 8px;
+        }
+
+        .accessory-category {
+            color: #1976d2;
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 10px;
+        }
+
+        .accessory-description {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            min-height: 42px;
+
+            margin-bottom: 14px;
+        }
+
+        .accessory-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accessory-price {
+            color: #0b1f3a;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .accessory-stock {
+            color: #2e7d32;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        .accessory-out {
+            color: #c62828;
+        }
+
+
+        /* ================= WHY CHOOSE ================= */
+
+        .why-section {
+            background: #f5f7fb;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: #0b1f3a;
+            color: white;
+
+            padding: 28px 20px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .why-card .icon {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #dce8f5;
+        }
+
+
+        /* ================= PROCESS ================= */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-card {
+            background: white;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+
+            background: #1976d2;
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto 15px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .process-card h3 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================= BOOKING SUCCESS ================= */
+
+        .booking-success {
+            max-width: 850px;
+
+            margin: 40px auto 0;
+
+            padding: 30px;
+
+            background: #e8f5e9;
+
+            border: 1px solid #a5d6a7;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .booking-success h2 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        .booking-success p {
+            color: #444;
+
+            margin: 10px 0;
+
+            line-height: 1.6;
+        }
+
+        .booking-success strong {
+            color: #0b1f3a;
+
+            font-size: 20px;
+        }
+
+        .booking-success a {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 12px 22px;
+
+            background: #1976d2;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+        }
+
+        .booking-success a:hover {
+            background: #0b1f3a;
+        }
+
+
+        /* ================= BOOK REPAIR ================= */
+
+        .booking-section {
+            background: white;
+        }
+
+        .booking-container {
+            max-width: 850px;
+
+            margin: auto;
+
+            background: #f5f7fb;
+
+            padding: 40px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .booking-form {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+
+            font-weight: bold;
+
+            color: #0b1f3a;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #d5dbe3;
+
+            border-radius: 6px;
+
+            outline: none;
+
+            background: white;
+
+            font-size: 14px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1976d2;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+
+            resize: vertical;
+        }
+
+        .submit-btn {
+            grid-column: 1 / -1;
+
+            background: #1976d2;
+
+            color: white;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #0b1f3a;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #f5f7fb;
+        }
+
+        .contact-grid {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-icon {
+            font-size: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-card h3 {
+            color: #0b1f3a;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= FAQ ================= */
+
+        .faq-section {
+            background: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 900px;
+
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+
+            padding: 25px;
+
+            margin-bottom: 18px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .faq-item h3 {
+            color: #0b1f3a;
+
+            margin-bottom: 12px;
+
+            font-size: 20px;
+        }
+
+        .faq-item p {
+            color: #666;
+
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0b1f3a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px 20px;
+        }
+
+        footer h3 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #c8d5e5;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= LOGIN MODAL ================= */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.6);
+
+            z-index: 2000;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-box {
+            background: white;
+
+            width: 90%;
+
+            max-width: 400px;
+
+            padding: 35px;
+
+            border-radius: 10px;
+
+            position: relative;
+        }
+
+        .modal-box h2 {
+            text-align: center;
+
+            color: #0b1f3a;
+
+            margin-bottom: 25px;
+        }
+
+        .close {
+            position: absolute;
+
+            top: 12px;
+            right: 18px;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+            color: #555;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .brands {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .accessories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 70px 15px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services,
+            .brands,
+            .accessories-grid,
+            .why-grid,
+            .process,
+            .contact-grid,
+            .booking-form {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .submit-btn {
+                grid-column: auto;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+
+            .booking-container {
+                padding: 25px 18px;
+            }
+
+        }
+
+    </style>
+
+
+    <!-- ================= FAQ SCHEMA / AEO ================= -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+
+            {
+                "@type": "Question",
+                "name": "What mobile repair services are available in Bengaluru?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MS Mobiles provides mobile repair services including screen replacement, battery replacement, charging repair, speaker and microphone repair, software service, water-damage repair, camera repair and other mobile repair services."
+                }
+            },
+
+            {
+                "@type": "Question",
+                "name": "How can I track my mobile repair?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can track your mobile repair using your Repair ID through the Track Repair page."
+                }
+            },
+
+            {
+                "@type": "Question",
+                "name": "How much does mobile repair cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Mobile repair costs depend on the mobile model and the type of problem. MS Mobiles provides an estimated repair cost after checking the device."
+                }
+            },
+
+            {
+                "@type": "Question",
+                "name": "What mobile brands does MS Mobiles support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MS Mobiles provides repair services for popular brands including Apple, Samsung, OnePlus, Xiaomi, Vivo, OPPO, Realme and Motorola."
+                }
+            },
+
+            {
+                "@type": "Question",
+                "name": "How do I book a mobile repair?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can book a mobile repair through the Book Repair form on the MS Mobiles website."
+                }
+            }
+
+        ]
+    }
+
+    </script>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================= -->
+<!-- NAVBAR -->
+<!-- ========================================================= -->
+
+<nav aria-label="Main navigation">
+
+    <div class="logo">
+        MS Mobiles
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#services">Services</a>
+        </li>
+
+        <li>
+            <a href="#accessories">Accessories</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#brands">Brands</a>
+        </li>
+
+        <li>
+            <a href="#booking">Book Repair</a>
+        </li>
+
+        <li>
+            <a href="{% url 'track_repair' %}">
+                Track Repair
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <a
+                href="#"
+                class="login-btn"
+                onclick="openLogin(event)"
+            >
+                Login
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
+
+<section class="hero" id="home">
+
+    <h1>
+        Professional Mobile Repair & Accessories in Bengaluru
+    </h1>
+
+    <p>
+        Fast, Reliable & Affordable Mobile Repair & Service
+    </p>
+
+    <a
+        href="#booking"
+        class="btn primary"
+    >
+        Book a Repair
+    </a>
+
+    <a
+        href="#services"
+        class="btn secondary"
+    >
+        View Services
+    </a>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- SERVICES -->
+<!-- ========================================================= -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>
+            Mobile Repair Services in Bengaluru
+        </h2>
+
+        <p>
+            Complete mobile repair solutions for your device
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                📱
+            </div>
+
+            <h3>
+                Screen Replacement
+            </h3>
+
+            <p>
+                Broken or damaged screen replacement with quality parts.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔋
+            </div>
+
+            <h3>
+                Battery Replacement
+            </h3>
+
+            <p>
+                Replace weak or damaged batteries and improve battery life.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔌
+            </div>
+
+            <h3>
+                Charging Repair
+            </h3>
+
+            <p>
+                Solutions for charging port and charging problems.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🔊
+            </div>
+
+            <h3>
+                Speaker & Mic Repair
+            </h3>
+
+            <p>
+                Fix microphone, speaker and sound-related problems.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Software Service
+            </h3>
+
+            <p>
+                Software troubleshooting, updates and system support.
+            </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <div class="service-icon">
+                🛠️
+            </div>
+
+            <h3>
+                Hardware Repair
+            </h3>
+
+            <p>
+                Professional diagnosis and repair of hardware issues.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- ABOUT -->
+<!-- ========================================================= -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About MS Mobiles
+        </h2>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <p>
+            MS Mobiles provides professional mobile phone repair
+            and service solutions. We help customers repair their
+            smartphones quickly and reliably.
+        </p>
+
+        <br>
+
+        <p>
+            Our services include screen replacement, battery
+            replacement, charging repair, software service,
+            hardware repair and other mobile-related problems.
+        </p>
+
+        <br>
+
+        <p>
+            We also provide quality mobile accessories including
+            chargers, cables, covers, tempered glass, earphones,
+            power banks and mobile holders.
+        </p>
+
+        <br>
+
+        <p>
+            Our goal is to provide quality service, transparent
+            repair information and customer satisfaction.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- MOBILE BRANDS -->
+<!-- ========================================================= -->
+
+<section
+    class="brands-section"
+    id="brands"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Mobile Brands We Repair
+        </h2>
+
+        <p>
+            We provide repair services for popular mobile brands
+        </p>
+
+    </div>
+
+
+    <div class="brands">
+
+
+        <div class="brand">
+
+            <h3>
+                 Apple
+            </h3>
+
+            <p>
+                iPhone Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                Samsung
+            </h3>
+
+            <p>
+                Galaxy Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                OnePlus
+            </h3>
+
+            <p>
+                OnePlus Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                Xiaomi
+            </h3>
+
+            <p>
+                Redmi / Mi Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                Vivo
+            </h3>
+
+            <p>
+                Vivo Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                OPPO
+            </h3>
+
+            <p>
+                OPPO Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                Realme
+            </h3>
+
+            <p>
+                Realme Repair
+            </p>
+
+        </div>
+
+
+        <div class="brand">
+
+            <h3>
+                Motorola
+            </h3>
+
+            <p>
+                Motorola Repair
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- ACCESSORIES -->
+<!-- ========================================================= -->
+
+<section
+    class="accessories-section"
+    id="accessories"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Mobile Accessories
+        </h2>
+
+        <p>
+            Quality accessories available at MS Mobiles
+        </p>
+
+    </div>
+
+
+    <div class="accessories-grid">
+
+
+        {% for accessory in accessories %}
+
+        <div class="accessory-card">
+
+
+            {% if accessory.image %}
+
+            <img
+                src="{{ accessory.image.url }}"
+                alt="{{ accessory.name }} - Mobile Accessory at MS Mobiles"
+                class="accessory-image"
+                loading="lazy"
+                decoding="async"
+            >
+
+            {% else %}
+
+            <div
+                class="accessory-no-image"
+                role="img"
+                aria-label="Mobile accessory"
+            >
+                📱
+            </div>
+
+            {% endif %}
+
+
+            <div class="accessory-content">
+
+                <h3>
+                    {{ accessory.name }}
+                </h3>
+
+
+                <div class="accessory-category">
+                    {{ accessory.category }}
+                </div>
+
+
+                <p class="accessory-description">
+
+                    {{ accessory.description|default:"Quality mobile accessory from MS Mobiles." }}
+
+                </p>
+
+
+                <div class="accessory-bottom">
+
+                    <span class="accessory-price">
+                        ₹{{ accessory.price }}
+                    </span>
+
+
+                    {% if accessory.stock > 0 %}
+
+                    <span class="accessory-stock">
+                        {{ accessory.stock }} in stock
+                    </span>
+
+                    {% else %}
+
+                    <span class="accessory-stock accessory-out">
+                        Out of stock
+                    </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        {% empty %}
+
+        <div
+            style="
+                grid-column: 1 / -1;
+                text-align: center;
+                padding: 30px;
+                color: #666;
+            "
+        >
+            No accessories available right now.
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- WHY CHOOSE -->
+<!-- ========================================================= -->
+
+<section class="why-section">
+
+    <div class="section-title">
+
+        <h2>
+            Why Choose MS Mobiles?
+        </h2>
+
+        <p>
+            Reliable service for your valuable mobile device
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                ⚡
+            </div>
+
+            <h3>
+                Quick Service
+            </h3>
+
+            <p>
+                Fast and efficient repair service for your device.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🛠️
+            </div>
+
+            <h3>
+                Professional Repair
+            </h3>
+
+            <p>
+                Experienced technicians handle your device carefully.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                💰
+            </div>
+
+            <h3>
+                Transparent Pricing
+            </h3>
+
+            <p>
+                Clear repair estimates before the service begins.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="icon">
+                🎧
+            </div>
+
+            <h3>
+                Customer Support
+            </h3>
+
+            <p>
+                Easy communication and support throughout the repair.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- SERVICE PROCESS -->
+<!-- ========================================================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>
+            Our Mobile Repair Process
+        </h2>
+
+        <p>
+            Simple and easy mobile repair process
+        </p>
+
+    </div>
+
+
+    <div class="process">
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                1
+            </div>
+
+            <h3>
+                Book Service
+            </h3>
+
+            <p>
+                Submit your mobile repair request online.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                2
+            </div>
+
+            <h3>
+                Device Check
+            </h3>
+
+            <p>
+                Our technician checks and diagnoses the device.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                3
+            </div>
+
+            <h3>
+                Repair
+            </h3>
+
+            <p>
+                The required repair is completed by our technician.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                4
+            </div>
+
+            <h3>
+                Service Complete
+            </h3>
+
+            <p>
+                Your repaired device is ready for collection.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- BOOKING SUCCESS -->
+<!-- ========================================================= -->
+
+{% if booking_success %}
+
+<div class="booking-success">
+
+    <h2>
+        ✅ Repair Booking Successful!
+    </h2>
+
+    <p>
+        Your repair booking has been submitted successfully.
+    </p>
+
+    <p>
+        Your Repair ID is:
+        <strong>#{{ repair_id }}</strong>
+    </p>
+
+    <p>
+        Please save this Repair ID to track your repair status.
+    </p>
+
+    <a href="{% url 'track_repair' %}">
+        Track Your Repair
+    </a>
+
+</div>
+
+{% endif %}
+
+
+<!-- ========================================================= -->
+<!-- BOOK REPAIR -->
+<!-- ========================================================= -->
+
+<section
+    class="booking-section"
+    id="booking"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Book a Mobile Repair
+        </h2>
+
+        <p>
+            Fill in the details below to request a repair service
+        </p>
+
+    </div>
+
+
+    <div class="booking-container">
+
+
+        <form
+            class="booking-form"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            {% csrf_token %}
+
+
+            <div class="form-group">
+
+                <label for="customer_name">
+                    Customer Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customer_name"
+                    name="customer_name"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customer_email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="customer_email"
+                    name="customer_email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone_number">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone_number"
+                    name="phone_number"
+                    placeholder="Enter phone number"
+                    autocomplete="tel"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile_brand">
+                    Mobile Brand
+                </label>
+
+                <select
+                    id="mobile_brand"
+                    name="mobile_brand"
+                    required
+                >
+
+                    <option value="">
+                        Select Brand
+                    </option>
+
+                    <option value="Apple">
+                        Apple
+                    </option>
+
+                    <option value="Samsung">
+                        Samsung
+                    </option>
+
+                    <option value="OnePlus">
+                        OnePlus
+                    </option>
+
+                    <option value="Xiaomi">
+                        Xiaomi
+                    </option>
+
+                    <option value="Vivo">
+                        Vivo
+                    </option>
+
+                    <option value="OPPO">
+                        OPPO
+                    </option>
+
+                    <option value="Realme">
+                        Realme
+                    </option>
+
+                    <option value="Motorola">
+                        Motorola
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mobile_model">
+                    Mobile Model
+                </label>
+
+                <input
+                    type="text"
+                    id="mobile_model"
+                    name="mobile_model"
+                    placeholder="Example: iPhone 13"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="problem_type">
+                    Service Required
+                </label>
+
+                <select
+                    id="problem_type"
+                    name="problem_type"
+                    required
+                >
+
+                    <option value="">
+                        Select Service
+                    </option>
+
+                    <option value="Screen Replacement">
+                        Screen Replacement
+                    </option>
+
+                    <option value="Battery Replacement">
+                        Battery Replacement
+                    </option>
+
+                    <option value="Charging Repair">
+                        Charging Repair
+                    </option>
+
+                    <option value="Speaker & Mic Repair">
+                        Speaker & Mic Repair
+                    </option>
+
+                    <option value="Software Service">
+                        Software Service
+                    </option>
+
+                    <option value="Hardware Repair">
+                        Hardware Repair
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="visit_type">
+                    Service Type
+                </label>
+
+                <select
+                    id="visit_type"
+                    name="visit_type"
+                    required
+                >
+
+                    <option value="Shop Visit">
+                        Shop Visit
+                    </option>
+
+                    <option value="Pickup">
+                        Pickup
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="preferred_date">
+                    Preferred Date
+                </label>
+
+                <input
+                    type="date"
+                    id="preferred_date"
+                    name="preferred_date"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone_image">
+                    Upload Phone Image
+                </label>
+
+                <input
+                    type="file"
+                    id="phone_image"
+                    name="phone_image"
+                    accept="image/*"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="problem_description">
+                    Describe Your Mobile Problem
+                </label>
+
+                <textarea
+                    id="problem_description"
+                    name="problem_description"
+                    placeholder="Describe your mobile problem..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Repair Request
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTACT -->
+<!-- ========================================================= -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Contact MS Mobiles
+        </h2>
+
+        <p>
+            Get in touch with MS Mobiles
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📍
+            </div>
+
+            <h3>
+                Service Center
+            </h3>
+
+            <p>
+                MS Mobiles<br>
+                Mobile Repair Center<br>
+                Bengaluru, Karnataka
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                📞
+            </div>
+
+            <h3>
+                Phone
+            </h3>
+
+            <p>
+                +91 98765 43210
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                ✉️
+            </div>
+
+            <h3>
+                Email
+            </h3>
+
+            <p>
+                msmobiles@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FAQ / AEO -->
+<!-- ========================================================= -->
+
+<section
+    class="faq-section"
+    id="faq"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Frequently Asked Questions
+        </h2>
+
+        <p>
+            Common questions about mobile repair services at MS Mobiles.
+        </p>
+
+    </div>
+
+
+    <div class="faq-container">
+
+
+        <div class="faq-item">
+
+            <h3>
+                What mobile repair services are available in Bengaluru?
+            </h3>
+
+            <p>
+                MS Mobiles provides mobile repair services including
+                screen replacement, battery replacement, charging repair,
+                speaker and microphone repair, software service,
+                water-damage repair, camera repair and other mobile
+                repair services.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How can I track my mobile repair?
+            </h3>
+
+            <p>
+                You can track your mobile repair using your Repair ID.
+                Open the Track Repair page, enter your Repair ID,
+                and check your current repair status.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How much does mobile repair cost?
+            </h3>
+
+            <p>
+                Mobile repair costs depend on the type of problem
+                and the mobile model. MS Mobiles provides an estimated
+                repair cost after checking the device.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                What mobile brands does MS Mobiles support?
+            </h3>
+
+            <p>
+                MS Mobiles provides repair services for popular brands
+                including Apple, Samsung, OnePlus, Xiaomi, Vivo,
+                OPPO, Realme and Motorola.
+            </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <h3>
+                How do I book a mobile repair?
+            </h3>
+
+            <p>
+                You can book a mobile repair through the Book Repair
+                form on the MS Mobiles website. Enter your customer
+                details, mobile brand and model, repair problem,
+                preferred date and problem description.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer>
+
+    <h3>
+        MS Mobiles
+    </h3>
+
+    <p>
+        Professional Mobile Repair & Accessories
+    </p>
+
+    <p>
+        © 2026 MS Mobiles. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- ========================================================= -->
+<!-- LOGIN MODAL -->
+<!-- ========================================================= -->
+
+<div
+    class="modal"
+    id="loginModal"
+    onclick="closeLoginOutside(event)"
+>
+
+    <div
+        class="modal-box"
+        onclick="event.stopPropagation()"
+    >
+
+        <span
+            class="close"
+            onclick="closeLogin()"
+            aria-label="Close login"
+        >
+            &times;
+        </span>
+
+
+        <h2>
+            Login
+        </h2>
+
+
+        <p
+            style="
+                text-align:center;
+                color:#666;
+                line-height:1.6;
+            "
+        >
+            Admin and staff members can use the
+            Django Admin panel to manage repair bookings
+            and accessories.
+        </p>
+
+        <br>
+
+
+        <a
+            href="/admin/"
+            class="btn primary"
+            style="
+                display:block;
+                text-align:center;
+            "
+        >
+            Open Admin Login
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
+
+<script>
+
+    function openLogin(event) {
+
+        event.preventDefault();
+
+        document.getElementById("loginModal").style.display = "flex";
+
+    }
+
+
+    function closeLogin() {
+
+        document.getElementById("loginModal").style.display = "none";
+
+    }
+
+
+    function closeLoginOutside(event) {
+
+        if (event.target.id === "loginModal") {
+
+            closeLogin();
+
+        }
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            closeLogin();
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Repair - MS Mobiles</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        .navbar {
+            background: #0b1f3a;
+            padding: 18px 30px;
+            color: white;
+        }
+
+        .navbar h2 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .track-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .track-box h1 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .track-box > p {
+            color: #666;
+        }
+
+        .track-form {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .track-form input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .track-form button {
+            padding: 14px 25px;
+            background: #0b1f3a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .track-form button:hover {
+            background: #12345c;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .result h2 {
+            color: #0b1f3a;
+        }
+
+        .result > p {
+            margin: 10px 0;
+            color: #444;
+        }
+
+        /* ================= REPAIR PROGRESS ================= */
+
+        .repair-progress {
+            margin-top: 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .repair-progress h3 {
+            color: #0b1f3a;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            gap: 8px;
+        }
+
+        .progress-steps::before {
+            content: "";
+            position: absolute;
+            top: 17px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: #ddd;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            margin: 0 auto 8px;
+            background: #ddd;
+            color: #666;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .step p {
+            margin: 0;
+            font-size: 12px;
+            color: #777;
+        }
+
+        .step.active span {
+            background: #0b1f3a;
+            color: white;
+        }
+
+        .step.active p {
+            color: #0b1f3a;
+            font-weight: bold;
+        }
+
+        .current-status {
+            margin-top: 25px !important;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .current-status strong {
+            color: #0b1f3a;
+        }
+
+        /* ================= NOT FOUND ================= */
+
+        .not-found {
+            margin-top: 25px;
+            padding: 15px;
+            background: #fff3f3;
+            color: #c62828;
+            border-radius: 8px;
+        }
+
+        /* ================= BACK BUTTON ================= */
+
+        .back {
+            display: inline-block;
+            margin-top: 25px;
+            color: #0b1f3a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            .container {
+                margin: 30px auto;
+                padding: 15px;
+            }
+
+            .track-box {
+                padding: 25px 18px;
+            }
+
+            .track-form {
+                flex-direction: column;
+            }
+
+            .track-form button {
+                width: 100%;
+            }
+
+            .progress-steps {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+            }
+
+            .step {
+                min-width: 90px;
+            }
+
+            .progress-steps::before {
+                left: 35px;
+                right: 35px;
+            }
+
+            .step p {
+                font-size: 11px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h2>MS Mobiles</h2>
+    </div>
+
+
+    <div class="container">
+
+        <div class="track-box">
+
+            <h1>Track Your Repair</h1>
+
+            <p>
+                Enter your Repair ID to check your current repair status.
+            </p>
+
+
+            <form method="GET" class="track-form">
+
+                <input
+                    type="number"
+                    name="repair_id"
+                    placeholder="Enter Repair ID"
+                    value="{{ repair_id|default:'' }}"
+                    required
+                >
+
+                <button type="submit">
+                    Track Repair
+                </button>
+
+            </form>
+
+
+            {% if repair_id and booking %}
+
+                <div class="result">
+
+                    <h2>Repair Details</h2>
+
+                    <p>
+                        <strong>Repair ID:</strong>
+                        #{{ booking.id }}
+                    </p>
+
+                    <p>
+                        <strong>Customer:</strong>
+                        {{ booking.customer_name }}
+                    </p>
+
+                    <p>
+                        <strong>Mobile:</strong>
+                        {{ booking.mobile_brand }}
+                        {{ booking.mobile_model }}
+                    </p>
+
+                    <p>
+                        <strong>Problem:</strong>
+                        {{ booking.problem_type }}
+                    </p>
+
+                    <p>
+                        <strong>Preferred Date:</strong>
+                        {{ booking.preferred_date }}
+                    </p>
+
+
+                    <!-- ================= REPAIR PROGRESS ================= -->
+
+                    <div class="repair-progress">
+
+                        <h3>Repair Progress</h3>
+
+                        <div class="progress-steps">
+
+                            <div class="step
+                                {% if booking.status == 'New' or booking.status == 'Accepted' or booking.status == 'Diagnosis' or booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>1</span>
+                                <p>New</p>
+                            </div>
+
+
+                            <div class="step
+                                {% if booking.status == 'Accepted' or booking.status == 'Diagnosis' or booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>2</span>
+                                <p>Accepted</p>
+                            </div>
+
+
+                            <div class="step
+                                {% if booking.status == 'Diagnosis' or booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>3</span>
+                                <p>Diagnosis</p>
+                            </div>
+
+
+                            <div class="step
+                                {% if booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>4</span>
+                                <p>In Progress</p>
+                            </div>
+
+
+                            <div class="step
+                                {% if booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>5</span>
+                                <p>Quality Check</p>
+                            </div>
+
+
+                            <div class="step
+                                {% if booking.status == 'Ready' or booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>6</span>
+                                <p>Ready</p>
+                            </div>
+
+
+                            <div class="step
+                                {% if booking.status == 'Completed' %}
+                                    active
+                                {% endif %}
+                            ">
+                                <span>7</span>
+                                <p>Completed</p>
+                            </div>
+
+                        </div>
+
+
+                        <p class="current-status">
+
+                            Current Status:
+                            <strong>{{ booking.status }}</strong>
+
+                        </p>
+
+                    </div>
+
+
+                    {% if booking.estimated_cost %}
+
+                        <p>
+                            <strong>Estimated Cost:</strong>
+                            ₹{{ booking.estimated_cost }}
+                        </p>
+
+                    {% endif %}
+
+
+                    {% if booking.final_cost %}
+
+                        <p>
+                            <strong>Final Cost:</strong>
+                            ₹{{ booking.final_cost }}
+                        </p>
+
+                    {% endif %}
+
+                </div>
+
+
+            {% elif repair_id %}
+
+                <div class="not-found">
+
+                    No repair booking found with Repair ID
+                    <strong>{{ repair_id }}</strong>.
+
+                </div>
+
+            {% endif %}
+
+
+            <a href="/" class="back">
+                ← Back to MS Mobiles
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
