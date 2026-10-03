@@ -22,9 +22,9 @@ ALLOWED_HOSTS = [
     'localhost',
     'ms-mobiles-dncs.onrender.com',
 ]
-  CSRF_TRUSTED_ORIGINS = [
-    'https://ms-mobiles-dncs.onrender.com',
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://ms-mobiles-dncs.onrender.com',
 ]
 
 
