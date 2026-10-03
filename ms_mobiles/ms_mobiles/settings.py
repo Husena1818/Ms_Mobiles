@@ -21,10 +21,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'ms-mobiles-dncs.onrender.com',
 ]
-<<<<<<< HEAD
 
-=======
->>>>>>> 24ce4b9 (Fix CSRF settings indentation)
 CSRF_TRUSTED_ORIGINS = [
     'https://ms-mobiles-dncs.onrender.com',
 ]
