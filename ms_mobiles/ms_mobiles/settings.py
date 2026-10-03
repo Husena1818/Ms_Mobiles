@@ -16,7 +16,6 @@ DEBUG = os.environ.get(
     'True'
 ).lower() == 'true'
 
-
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
@@ -26,7 +25,6 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     'https://ms-mobiles-dncs.onrender.com',
 ]
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
