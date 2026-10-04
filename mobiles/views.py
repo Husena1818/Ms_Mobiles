@@ -134,11 +134,11 @@ def sitemap(request):
         content_type='text/xml'
     )
 
+
 def setup_admin(request):
 
     setup_key = os.getenv("ADMIN_SETUP_KEY")
 
-    # Check secret setup key
     if request.GET.get("key") != setup_key:
         return HttpResponse(
             "Invalid setup key.",
@@ -150,14 +150,12 @@ def setup_admin(request):
     username = os.getenv("ADMIN_USERNAME")
     password = os.getenv("ADMIN_PASSWORD")
 
-    # Check admin credentials exist
     if not username or not password:
         return HttpResponse(
             "ADMIN_USERNAME or ADMIN_PASSWORD is missing.",
             status=500
         )
 
-    # Create or update the admin user
     user, created = User.objects.get_or_create(
         username=username
     )
