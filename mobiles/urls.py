@@ -1,11 +1,15 @@
 from django.urls import path
-from django.views.generic import TemplateView
+from django.http import HttpResponse
 
 from .views import home, track_repair, sitemap, setup_admin
 
 
 urlpatterns = [
-    path('', home, name='home'),
+    path(
+        '',
+        home,
+        name='home'
+    ),
 
     path(
         'track-repair/',
@@ -27,8 +31,15 @@ urlpatterns = [
 
     path(
         'robots.txt',
-        TemplateView.as_view(
-            template_name='robots.txt',
+        lambda request: HttpResponse(
+            """User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /setup-admin/
+
+Sitemap: https://ms-mobiles-4us8.onrender.com/sitemap.xml
+""",
             content_type='text/plain'
         ),
         name='robots'

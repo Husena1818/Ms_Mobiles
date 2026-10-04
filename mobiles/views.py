@@ -111,9 +111,26 @@ def track_repair(request):
 
 def sitemap(request):
 
-    return render(
-        request,
-        'sitemap.xml',
+    sitemap_content = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://ms-mobiles-4us8.onrender.com/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://ms-mobiles-4us8.onrender.com/track-repair/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
+"""
+
+    return HttpResponse(
+        sitemap_content,
         content_type='application/xml'
     )
 
