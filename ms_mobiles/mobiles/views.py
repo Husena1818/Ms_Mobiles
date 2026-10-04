@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.core.mail import send_mail
 from django.db.models import Q
 
 from .models import Mobile, Repair, Order
@@ -138,48 +137,6 @@ def repair(request):
         print("========== REPAIR ID ==========")
         print(repair.id)
         print("================================")
-
-        try:
-
-            send_mail(
-                subject=f'MS Mobiles - Repair Booked #{repair.id}',
-
-                message=f"""
-Hello {customer_name},
-
-Your mobile repair has been successfully booked.
-
-Repair ID: {repair.id}
-
-Mobile:
-{mobile_brand} {mobile_model}
-
-Problem:
-{problem_type}
-
-Service Type:
-{service_type}
-
-Status:
-{repair.status}
-
-Please keep your Repair ID safe to track your repair.
-
-Thank you,
-MS Mobiles
-""",
-
-                from_email='reddyummadihema@gmail.com',
-
-                recipient_list=[
-                    'reddyummadihema@gmail.com'
-                ],
-
-                fail_silently=False
-            )
-
-        except Exception:
-            pass
 
         return render(
             request,
