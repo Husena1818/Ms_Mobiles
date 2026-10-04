@@ -112,3 +112,40 @@ def sitemap(request):
         'sitemap.xml',
         content_type='application/xml'
     )
+    import os
+from django.contrib.auth import get_user_model
+
+
+def setup_admin(request):
+
+    setup_key = os.getenv("ADMIN_SETUP_KEY")
+
+    if request.GET.get("key") != setup_key:
+        return render(request, "mobiles/setup_error.html", status=403)
+
+    User = get_user_model()
+
+    username = os.getenv("ADMIN_USERNAME")
+    password = os.getenv("ADMIN_PASSWORD")
+
+    if not username or not password:
+        return render(request, "mobiles/setup_error.html", status=500)
+
+    user, created = User.objects.get_or_create(
+        username=username
+    )
+
+    user.set_password(password)
+    user.is_staff = True
+    user.is_superuser = True
+    user.is_active = True
+    user.save()
+
+    return render(
+        request,
+        "mobiles/setup_success.html",
+        {
+            "username": username,
+            "created": created,
+        }
+    )
