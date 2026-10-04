@@ -5,3 +5,4 @@ requests
 whitenoise
 gunicorn
 dj-database-url
+psycopg[binary]
