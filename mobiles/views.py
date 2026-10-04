@@ -129,10 +129,10 @@ def sitemap(request):
 </urlset>
 """
 
-    return HttpResponse(
-        sitemap_content,
-        content_type='text/xml'
-    )
+   return HttpResponse(
+    sitemap_content,
+    content_type='application/xml'
+)
 
 
 def setup_admin(request):
