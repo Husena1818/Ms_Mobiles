@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib.auth import get_user_model
+from django.http import HttpResponse
+
+import os
 
 from .models import RepairBooking, Accessory
 
@@ -112,25 +116,32 @@ def sitemap(request):
         'sitemap.xml',
         content_type='application/xml'
     )
-    import os
-from django.contrib.auth import get_user_model
 
 
 def setup_admin(request):
 
     setup_key = os.getenv("ADMIN_SETUP_KEY")
 
+    # Check secret setup key
     if request.GET.get("key") != setup_key:
-        return render(request, "mobiles/setup_error.html", status=403)
+        return HttpResponse(
+            "Invalid setup key.",
+            status=403
+        )
 
     User = get_user_model()
 
     username = os.getenv("ADMIN_USERNAME")
     password = os.getenv("ADMIN_PASSWORD")
 
+    # Check admin credentials exist
     if not username or not password:
-        return render(request, "mobiles/setup_error.html", status=500)
+        return HttpResponse(
+            "ADMIN_USERNAME or ADMIN_PASSWORD is missing.",
+            status=500
+        )
 
+    # Create or update the admin user
     user, created = User.objects.get_or_create(
         username=username
     )
@@ -141,11 +152,6 @@ def setup_admin(request):
     user.is_active = True
     user.save()
 
-    return render(
-        request,
-        "mobiles/setup_success.html",
-        {
-            "username": username,
-            "created": created,
-        }
+    return HttpResponse(
+        f"Admin setup successful. Username: {username}"
     )
