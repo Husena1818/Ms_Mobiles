@@ -94,8 +94,10 @@ def track_repair(request):
     repair_id = request.GET.get('repair_id')
 
     if repair_id:
+
         try:
             booking = RepairBooking.objects.get(id=repair_id)
+
         except RepairBooking.DoesNotExist:
             booking = None
 
@@ -129,10 +131,10 @@ def sitemap(request):
 </urlset>
 """
 
-   return HttpResponse(
-    sitemap_content,
-    content_type='application/xml'
-)
+    return HttpResponse(
+        sitemap_content,
+        content_type='application/xml'
+    )
 
 
 def setup_admin(request):
@@ -140,6 +142,7 @@ def setup_admin(request):
     setup_key = os.getenv("ADMIN_SETUP_KEY")
 
     if request.GET.get("key") != setup_key:
+
         return HttpResponse(
             "Invalid setup key.",
             status=403
@@ -151,6 +154,7 @@ def setup_admin(request):
     password = os.getenv("ADMIN_PASSWORD")
 
     if not username or not password:
+
         return HttpResponse(
             "ADMIN_USERNAME or ADMIN_PASSWORD is missing.",
             status=500
