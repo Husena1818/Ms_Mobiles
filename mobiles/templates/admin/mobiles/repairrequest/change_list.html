@@ -1,0 +1,495 @@
+{% extends "admin/change_list.html" %}
+
+{% block content_title %}
+
+<h1>
+    🔧 Repair Management Dashboard
+</h1>
+
+{% endblock %}
+
+
+{% block result_list %}
+
+<div class="repair-dashboard">
+
+    <!-- TOTAL -->
+    <a href="?" class="dashboard-link">
+
+        <div class="dashboard-card total">
+
+            <div class="card-icon">
+                📊
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Total Repairs
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.total }}
+                </div>
+
+                <div class="card-action">
+                    View All Repairs →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- PENDING -->
+    <a href="?status__exact=PENDING" class="dashboard-link">
+
+        <div class="dashboard-card pending">
+
+            <div class="card-icon">
+                🟡
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Pending
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.pending }}
+                </div>
+
+                <div class="card-action">
+                    View Pending →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- CONFIRMED -->
+    <a href="?status__exact=CONFIRMED" class="dashboard-link">
+
+        <div class="dashboard-card confirmed">
+
+            <div class="card-icon">
+                🔵
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Confirmed
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.confirmed }}
+                </div>
+
+                <div class="card-action">
+                    View Confirmed →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- IN PROGRESS -->
+    <a href="?status__exact=IN_PROGRESS" class="dashboard-link">
+
+        <div class="dashboard-card progress">
+
+            <div class="card-icon">
+                🟠
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    In Progress
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.in_progress }}
+                </div>
+
+                <div class="card-action">
+                    View In Progress →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- READY -->
+    <a href="?status__exact=READY" class="dashboard-link">
+
+        <div class="dashboard-card ready">
+
+            <div class="card-icon">
+                🟣
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Ready for Pickup
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.ready }}
+                </div>
+
+                <div class="card-action">
+                    View Ready →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- COMPLETED -->
+    <a href="?status__exact=COMPLETED" class="dashboard-link">
+
+        <div class="dashboard-card completed">
+
+            <div class="card-icon">
+                🟢
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Completed
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.completed }}
+                </div>
+
+                <div class="card-action">
+                    View Completed →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+
+    <!-- CANCELLED -->
+    <a href="?status__exact=CANCELLED" class="dashboard-link">
+
+        <div class="dashboard-card cancelled">
+
+            <div class="card-icon">
+                🔴
+            </div>
+
+            <div class="card-content">
+
+                <div class="card-title">
+                    Cancelled
+                </div>
+
+                <div class="card-number">
+                    {{ dashboard_counts.cancelled }}
+                </div>
+
+                <div class="card-action">
+                    View Cancelled →
+                </div>
+
+            </div>
+
+        </div>
+
+    </a>
+
+</div>
+
+
+{{ block.super }}
+
+
+{% endblock %}
+
+
+{% block extrastyle %}
+
+{{ block.super }}
+
+<style>
+
+    /* ========================================================
+       REPAIR DASHBOARD
+       ======================================================== */
+
+    .repair-dashboard {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(4, minmax(180px, 1fr));
+
+        gap: 18px;
+
+        margin:
+            0 0 28px 0;
+
+    }
+
+
+    /* ========================================================
+       DASHBOARD LINK
+       ======================================================== */
+
+    .dashboard-link {
+
+        display: block;
+
+        text-decoration: none !important;
+
+        color: inherit !important;
+
+    }
+
+
+    /* ========================================================
+       DASHBOARD CARD
+       ======================================================== */
+
+    .dashboard-card {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 16px;
+
+        min-height: 125px;
+
+        padding: 20px;
+
+        background: #ffffff;
+
+        border: 1px solid #dbe5ef;
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 5px 18px
+            rgba(15, 55, 90, 0.08);
+
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+        cursor: pointer;
+
+    }
+
+
+    .dashboard-card:hover {
+
+        transform:
+            translateY(-4px);
+
+        box-shadow:
+            0 12px 30px
+            rgba(15, 55, 90, 0.16);
+
+    }
+
+
+    /* ========================================================
+       ICON
+       ======================================================== */
+
+    .card-icon {
+
+        font-size: 32px;
+
+        line-height: 1;
+
+        flex-shrink: 0;
+
+    }
+
+
+    /* ========================================================
+       CONTENT
+       ======================================================== */
+
+    .card-content {
+
+        min-width: 0;
+
+    }
+
+
+    .card-title {
+
+        color: #60758a;
+
+        font-size: 13px;
+
+        font-weight: 700;
+
+        margin-bottom: 7px;
+
+    }
+
+
+    .card-number {
+
+        color: #20364d;
+
+        font-size: 30px;
+
+        font-weight: 800;
+
+        line-height: 1;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .card-action {
+
+        color: #1976d2;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+    }
+
+
+    /* ========================================================
+       STATUS COLORS
+       ======================================================== */
+
+    .total {
+
+        border-top:
+            4px solid #1264a3;
+
+    }
+
+
+    .pending {
+
+        border-top:
+            4px solid #f59e0b;
+
+    }
+
+
+    .confirmed {
+
+        border-top:
+            4px solid #2563eb;
+
+    }
+
+
+    .progress {
+
+        border-top:
+            4px solid #f97316;
+
+    }
+
+
+    .ready {
+
+        border-top:
+            4px solid #7c3aed;
+
+    }
+
+
+    .completed {
+
+        border-top:
+            4px solid #16a34a;
+
+    }
+
+
+    .cancelled {
+
+        border-top:
+            4px solid #dc2626;
+
+    }
+
+
+    /* ========================================================
+       RESPONSIVE
+       ======================================================== */
+
+    @media (max-width: 1100px) {
+
+        .repair-dashboard {
+
+            grid-template-columns:
+                repeat(3, minmax(180px, 1fr));
+
+        }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+        .repair-dashboard {
+
+            grid-template-columns:
+                repeat(2, minmax(180px, 1fr));
+
+        }
+
+    }
+
+
+    @media (max-width: 550px) {
+
+        .repair-dashboard {
+
+            grid-template-columns:
+                1fr;
+
+        }
+
+
+        .dashboard-card {
+
+            min-height:
+                90px;
+
+        }
+
+    }
+
+</style>
+
+{% endblock %}

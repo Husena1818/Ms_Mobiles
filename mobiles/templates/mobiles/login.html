@@ -1,0 +1,1121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================
+         SEO TITLE
+    ========================== -->
+    <title>MS Mobiles | Mobile Repair & Service Center</title>
+
+    <!-- =========================
+         SEO META DESCRIPTION
+    ========================== -->
+    <meta name="description"
+          content="MS Mobiles provides professional mobile repair services including screen replacement, battery replacement, charging repair and software service.">
+
+    <!-- =========================
+         SEO KEYWORDS
+    ========================== -->
+    <meta name="keywords"
+          content="mobile repair, mobile repair service, phone repair, mobile service center, mobile repair shop, screen replacement, battery replacement, charging repair, software repair, hardware repair, MS Mobiles">
+
+    <!-- =========================
+         SEARCH ENGINE INSTRUCTIONS
+    ========================== -->
+    <meta name="robots" content="index, follow">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            background: #0b1f3a;
+            color: white;
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #1976d2;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(11, 31, 58, 0.90),
+                    rgba(25, 118, 210, 0.85)
+                );
+
+            color: white;
+
+            padding: 100px 7%;
+
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            margin: 8px;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+        }
+
+        .primary {
+            background: white;
+            color: #1976d2;
+        }
+
+        .secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #e9f2ff;
+        }
+
+        .secondary:hover {
+            background: white;
+            color: #1976d2;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            color: #0b1f3a;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #666;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #1976d2;
+            margin: 15px 0;
+        }
+
+        .service-icon {
+            font-size: 45px;
+        }
+
+
+        /* =========================
+           BRANDS
+        ========================== */
+
+        .brands {
+            background: #eef3f8;
+        }
+
+        .brand-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            text-align: center;
+        }
+
+        .brand {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           WHY CHOOSE US
+        ========================== */
+
+        .why-us {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .why-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .why-card h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           PROCESS
+        ========================== */
+
+        .process {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            text-align: center;
+        }
+
+        .process-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+
+            background: #1976d2;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            margin: auto;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+        .process-card h3 {
+            margin: 15px 0;
+        }
+
+
+        /* =========================
+           FAQ / AEO
+        ========================== */
+
+        .faq {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: white;
+
+            margin-bottom: 15px;
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item h3 {
+            color: #0b1f3a;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            background: #0b1f3a;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #071426;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .services {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .brand-list {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .why-us {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-list {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 70px 5%;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            📱 MS Mobiles
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#process">
+                    How It Works
+                </a>
+            </li>
+
+            <li>
+                <a href="#faq">
+                    FAQ
+                </a>
+            </li>
+
+            <li>
+                <a href="/repair-track/">
+                    Track Repair
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <!-- MAIN SEO H1 -->
+
+        <h1>
+            Professional Mobile Repair Services
+        </h1>
+
+        <p>
+            Fast, reliable and affordable mobile repair services
+            for smartphones and devices.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="/book-repair/"
+                class="btn primary"
+            >
+                Book a Repair
+            </a>
+
+            <a
+                href="#services"
+                class="btn secondary"
+            >
+                View Services
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
+
+        <div class="section-title">
+
+            <h2>
+                Our Mobile Repair Services
+            </h2>
+
+            <p>
+                Professional solutions for common mobile phone problems.
+            </p>
+
+        </div>
+
+
+        <div class="services">
+
+
+            <!-- SCREEN REPAIR -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Mobile Screen Replacement
+                </h3>
+
+                <p>
+                    Professional mobile screen replacement
+                    for cracked, broken and damaged phone displays.
+                </p>
+
+            </div>
+
+
+            <!-- BATTERY -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔋
+                </div>
+
+                <h3>
+                    Mobile Battery Replacement
+                </h3>
+
+                <p>
+                    Replace weak, damaged or quickly draining
+                    mobile phone batteries with professional service.
+                </p>
+
+            </div>
+
+
+            <!-- CHARGING -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔌
+                </div>
+
+                <h3>
+                    Mobile Charging Port Repair
+                </h3>
+
+                <p>
+                    Professional charging port repair for
+                    mobile phones experiencing charging problems.
+                </p>
+
+            </div>
+
+
+            <!-- SPEAKER -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔊
+                </div>
+
+                <h3>
+                    Speaker & Microphone Repair
+                </h3>
+
+                <p>
+                    Solutions for speaker, microphone and
+                    audio-related mobile phone problems.
+                </p>
+
+            </div>
+
+
+            <!-- SOFTWARE -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Mobile Software Repair
+                </h3>
+
+                <p>
+                    Software troubleshooting and solutions
+                    for common mobile phone software problems.
+                </p>
+
+            </div>
+
+
+            <!-- HARDWARE -->
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Mobile Hardware Repair
+                </h3>
+
+                <p>
+                    Professional diagnosis and repair
+                    for supported mobile hardware issues.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MOBILE BRANDS
+    ========================== -->
+
+    <section class="brands">
+
+        <div class="section-title">
+
+            <h2>
+                Mobile Brands We Support
+            </h2>
+
+            <p>
+                Repair services for popular smartphone brands.
+            </p>
+
+        </div>
+
+
+        <div class="brand-list">
+
+            <div class="brand">
+                Apple
+            </div>
+
+            <div class="brand">
+                Samsung
+            </div>
+
+            <div class="brand">
+                OnePlus
+            </div>
+
+            <div class="brand">
+                Xiaomi
+            </div>
+
+            <div class="brand">
+                Vivo
+            </div>
+
+            <div class="brand">
+                OPPO
+            </div>
+
+            <div class="brand">
+                Realme
+            </div>
+
+            <div class="brand">
+                Motorola
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT / WHY CHOOSE US
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+                Why Choose MS Mobiles?
+            </h2>
+
+            <p>
+                Reliable mobile repair with customer-focused service.
+            </p>
+
+        </div>
+
+
+        <div class="why-us">
+
+
+            <div class="why-card">
+
+                <h3>
+                    ⚡ Quick Service
+                </h3>
+
+                <p>
+                    We aim to provide fast and efficient
+                    mobile repair service.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>
+                    🛠️ Professional Repair
+                </h3>
+
+                <p>
+                    Mobile problems are diagnosed before
+                    repair to identify the required service.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>
+                    💰 Transparent Service
+                </h3>
+
+                <p>
+                    Clear information about mobile repair
+                    services and costs.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>
+                    🤝 Customer Support
+                </h3>
+
+                <p>
+                    Customer support throughout the
+                    mobile repair process.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         REPAIR PROCESS
+    ========================== -->
+
+    <section id="process">
+
+        <div class="section-title">
+
+            <h2>
+                How Our Mobile Repair Process Works
+            </h2>
+
+            <p>
+                Simple steps to get your mobile phone repaired.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    1
+                </div>
+
+                <h3>
+                    Book Mobile Repair
+                </h3>
+
+                <p>
+                    Submit your mobile repair request
+                    online through MS Mobiles.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    2
+                </div>
+
+                <h3>
+                    Device Check
+                </h3>
+
+                <p>
+                    Your mobile phone problem is checked
+                    and diagnosed.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">
+                    3
+                </div>
+
+                <h3>
+                    Mobile Repair
+                </h3>
+
+                <p>
+                    The required repair is completed
+                    and the repair status can be tracked.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAQ / AEO
+    ========================== -->
+
+    <section id="faq">
+
+        <div class="section-title">
+
+            <h2>
+                Frequently Asked Questions About Mobile Repair
+            </h2>
+
+            <p>
+                Answers to common mobile repair questions.
+            </p>
+
+        </div>
+
+
+        <div class="faq">
+
+
+            <!-- QUESTION 1 -->
+
+            <div class="faq-item">
+
+                <h3>
+                    What mobile repair services does MS Mobiles provide?
+                </h3>
+
+                <p>
+                    MS Mobiles provides professional mobile repair
+                    services including screen replacement, battery
+                    replacement, charging port repair, speaker and
+                    microphone repair, software repair and
+                    hardware repair.
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 2 -->
+
+            <div class="faq-item">
+
+                <h3>
+                    Can I book a mobile repair online?
+                </h3>
+
+                <p>
+                    Yes. Customers can submit a mobile repair request
+                    online through the MS Mobiles repair booking system.
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 3 -->
+
+            <div class="faq-item">
+
+                <h3>
+                    Can I track my mobile repair?
+                </h3>
+
+                <p>
+                    Yes. Customers can use the MS Mobiles repair
+                    tracking feature to check the current status
+                    of their repair request.
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 4 -->
+
+            <div class="faq-item">
+
+                <h3>
+                    What mobile phone brands does MS Mobiles support?
+                </h3>
+
+                <p>
+                    MS Mobiles supports popular smartphone brands
+                    including Apple, Samsung, OnePlus, Xiaomi,
+                    Vivo, OPPO, Realme and Motorola.
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 5 -->
+
+            <div class="faq-item">
+
+                <h3>
+                    Where can I get my mobile charging port repaired?
+                </h3>
+
+                <p>
+                    MS Mobiles provides mobile charging port repair
+                    services for supported devices experiencing
+                    charging problems.
+                </p>
+
+            </div>
+
+
+            <!-- QUESTION 6 -->
+
+            <div class="faq-item">
+
+                <h3>
+                    How can I replace my mobile phone battery?
+                </h3>
+
+                <p>
+                    Customers can submit a repair request to MS Mobiles
+                    for professional mobile battery inspection and
+                    replacement service.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="cta">
+
+        <h2>
+            Need Mobile Repair?
+        </h2>
+
+        <p>
+            Book your mobile repair request today.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="/book-repair/"
+                class="btn primary"
+            >
+                Book a Repair
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 MS Mobiles. All Rights Reserved.
+        </p>
+
+        <p>
+            Professional Mobile Repair & Service
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

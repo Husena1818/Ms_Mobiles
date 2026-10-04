@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Repair Tracking - MS Mobiles</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        nav {
+            background: #0b1f3a;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #64b5f6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #125ca8;
+        }
+
+        .details {
+            border-top: 1px solid #eee;
+            padding-top: 25px;
+        }
+
+        .repair-title {
+            color: #0b1f3a;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .status {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .message {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+
+        .info {
+            margin-top: 25px;
+            padding: 18px;
+            background: #eef6ff;
+            border-radius: 10px;
+            color: #315b80;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            form {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">📱 MS Mobiles</div>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/book-repair/">Book Repair</a>
+        <a href="/track/">Track Order</a>
+    </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>🔧 Track Your Repair</h1>
+
+        <p class="subtitle">
+            Check the latest status of your mobile repair request
+        </p>
+
+
+        <form method="GET">
+
+            <input
+                type="number"
+                name="repair_id"
+                placeholder="Enter Repair Request ID"
+                required
+            >
+
+            <button type="submit">
+                Track Repair
+            </button>
+
+        </form>
+
+
+        {% if repair %}
+
+        <div class="details">
+
+            <h2 class="repair-title">
+                Repair Request #{{ repair.id }}
+            </h2>
+
+
+            <div class="row">
+                <span class="label">Customer</span>
+                <span>{{ repair.customer_name }}</span>
+            </div>
+
+
+            <div class="row">
+                <span class="label">Phone</span>
+                <span>{{ repair.phone }}</span>
+            </div>
+
+
+            <div class="row">
+                <span class="label">Brand</span>
+                <span>{{ repair.brand }}</span>
+            </div>
+
+
+            <div class="row">
+                <span class="label">Mobile Model</span>
+                <span>{{ repair.mobile_model }}</span>
+            </div>
+
+
+            <div class="row">
+                <span class="label">Service</span>
+                <span>{{ repair.service }}</span>
+            </div>
+
+
+            <div class="row">
+                <span class="label">Request Date</span>
+                <span>{{ repair.request_date }}</span>
+            </div>
+
+
+            <div class="row">
+                <span class="label">Current Status</span>
+
+                <span class="status">
+                    {{ repair.get_status_display }}
+                </span>
+            </div>
+
+        </div>
+
+
+        <div class="info">
+            Your repair status is updated automatically by MS Mobiles.
+        </div>
+
+
+        {% elif request.GET.repair_id %}
+
+        <div class="message">
+            ❌ Repair request not found.
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

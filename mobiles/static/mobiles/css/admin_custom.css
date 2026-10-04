@@ -1,0 +1,1237 @@
+﻿/* =========================================================
+   MS MOBILES - PROFESSIONAL DJANGO ADMIN
+   COMPLETE ADMIN CSS
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: #f4f7fb !important;
+    color: #20364d !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+#header {
+    background: linear-gradient(
+        135deg,
+        #0b1f3a,
+        #1976d2
+    ) !important;
+
+    padding: 14px 25px !important;
+    min-height: 60px !important;
+}
+
+#branding {
+    display: flex !important;
+    align-items: center !important;
+}
+
+#branding h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 24px !important;
+    line-height: 32px !important;
+    font-weight: 700 !important;
+}
+
+#branding h1 a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+#user-tools {
+    color: #ffffff !important;
+    font-size: 13px !important;
+    line-height: 20px !important;
+}
+
+#user-tools a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+#user-tools a:hover {
+    color: #dbeafe !important;
+}
+
+
+/* =========================================================
+   BREADCRUMBS
+   ========================================================= */
+
+.breadcrumbs {
+    background: #ffffff !important;
+    color: #5c7085 !important;
+
+    border-bottom: 1px solid #dbe5ef !important;
+
+    padding: 12px 25px !important;
+
+    font-size: 13px !important;
+}
+
+.breadcrumbs a {
+    color: #1264a3 !important;
+}
+
+.breadcrumbs a:hover {
+    color: #1976d2 !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+#content {
+    max-width: 1500px !important;
+
+    width: 100% !important;
+
+    margin: 25px auto !important;
+
+    padding: 0 25px 40px 25px !important;
+}
+
+#content-main {
+    width: 100% !important;
+}
+
+#content h1 {
+    color: #102a43 !important;
+
+    font-size: 28px !important;
+
+    font-weight: 700 !important;
+
+    margin: 0 0 25px 0 !important;
+}
+
+a {
+    color: #1264a3 !important;
+}
+
+a:hover {
+    color: #1976d2 !important;
+}
+
+
+/* =========================================================
+   ADMIN SIDEBAR
+   ========================================================= */
+
+#nav-sidebar {
+    background: #ffffff !important;
+
+    border-right: 1px solid #dbe5ef !important;
+}
+
+#nav-sidebar .module {
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    border-left: none !important;
+
+    border-right: none !important;
+}
+
+#nav-sidebar .module caption {
+    background: #e8f5ff !important;
+
+    color: #1264a3 !important;
+
+    font-weight: 700 !important;
+}
+
+#nav-sidebar .current-app .section {
+    background: #eaf4fb !important;
+}
+
+#nav-sidebar .current-model {
+    background: #dbeeff !important;
+}
+
+#nav-sidebar a {
+    color: #1264a3 !important;
+}
+
+#nav-sidebar a:hover {
+    color: #1976d2 !important;
+}
+
+
+/* =========================================================
+   DASHBOARD MODULES
+   ========================================================= */
+
+.dashboard .module,
+.module {
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 14px !important;
+
+    overflow: hidden !important;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.06) !important;
+
+    margin-bottom: 25px !important;
+}
+
+.dashboard .module caption,
+.module h2 {
+    background: linear-gradient(
+        135deg,
+        #e8f5ff,
+        #d7efff
+    ) !important;
+
+    color: #1264a3 !important;
+
+    font-size: 17px !important;
+
+    font-weight: 700 !important;
+
+    padding: 16px 20px !important;
+
+    border-bottom: 1px solid #c7e1f2 !important;
+}
+
+.dashboard .module table {
+    width: 100% !important;
+}
+
+.dashboard .module th,
+.dashboard .module td {
+    padding: 14px 18px !important;
+
+    border-bottom: 1px solid #edf1f5 !important;
+
+    vertical-align: middle !important;
+}
+
+.dashboard .module tr:hover {
+    background: #f5faff !important;
+}
+
+.dashboard .module th {
+    color: #20364d !important;
+
+    font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   FORM FIELDSETS
+   ========================================================= */
+
+fieldset {
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 14px !important;
+
+    margin-bottom: 24px !important;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.05) !important;
+
+    overflow: visible !important;
+}
+
+fieldset h2 {
+    background: linear-gradient(
+        135deg,
+        #e8f5ff,
+        #d7efff
+    ) !important;
+
+    color: #1264a3 !important;
+
+    font-size: 17px !important;
+
+    font-weight: 700 !important;
+
+    padding: 15px 20px !important;
+
+    margin: 0 !important;
+
+    border-bottom: 1px solid #c7e1f2 !important;
+
+    border-radius: 14px 14px 0 0 !important;
+}
+
+
+/* =========================================================
+   FORM ROWS
+   ========================================================= */
+
+.form-row {
+    padding: 16px 20px !important;
+
+    border-bottom: 1px solid #edf1f5 !important;
+
+    min-height: 70px !important;
+
+    overflow: visible !important;
+}
+
+.form-row:last-child {
+    border-bottom: none !important;
+}
+
+.form-row label {
+    color: #20364d !important;
+
+    font-weight: 600 !important;
+
+    font-size: 14px !important;
+
+    line-height: 24px !important;
+}
+
+.form-row .help,
+.help,
+.helptext {
+    color: #718096 !important;
+
+    font-size: 12px !important;
+
+    margin-top: 5px !important;
+}
+
+
+/* =========================================================
+   GENERAL INPUTS
+   ========================================================= */
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="password"],
+input[type="file"],
+textarea {
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    min-height: 46px !important;
+
+    box-sizing: border-box !important;
+
+    padding: 10px 13px !important;
+
+    border: 1px solid #cbd8e5 !important;
+
+    border-radius: 9px !important;
+
+    background: #ffffff !important;
+
+    color: #20364d !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    line-height: 24px !important;
+
+    vertical-align: middle !important;
+}
+
+
+/* =========================================================
+   SELECT / DROPDOWN
+   FINAL CLIPPING FIX
+   ========================================================= */
+
+#content-main select,
+#content-main .aligned select,
+#content-main .form-row select,
+#content-main fieldset select {
+
+    box-sizing: border-box !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    height: 48px !important;
+
+    min-height: 48px !important;
+
+    margin: 0 !important;
+
+    padding: 0 42px 0 14px !important;
+
+    border: 1px solid #bfcfe0 !important;
+
+    border-radius: 9px !important;
+
+    background-color: #ffffff !important;
+
+    color: #20364d !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    font-weight: 400 !important;
+
+    line-height: normal !important;
+
+    vertical-align: middle !important;
+
+    outline: none !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
+
+    appearance: none !important;
+
+    -webkit-appearance: none !important;
+
+    -moz-appearance: none !important;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #456 50%
+        ),
+        linear-gradient(
+            135deg,
+            #456 50%,
+            transparent 50%
+        ) !important;
+
+    background-position:
+        calc(100% - 19px) 20px,
+        calc(100% - 14px) 20px !important;
+
+    background-size:
+        5px 5px,
+        5px 5px !important;
+
+    background-repeat: no-repeat !important;
+}
+
+
+/* =========================================================
+   SPECIFIC REPAIR DROPDOWNS
+   ========================================================= */
+
+#id_service,
+#id_service_type,
+#id_status {
+
+    width: 100% !important;
+
+    height: 48px !important;
+
+    min-height: 48px !important;
+
+    max-width: 100% !important;
+
+    padding: 0 42px 0 14px !important;
+
+    line-height: normal !important;
+
+    vertical-align: middle !important;
+
+    overflow: hidden !important;
+
+    white-space: nowrap !important;
+
+    text-overflow: ellipsis !important;
+}
+
+
+/* =========================================================
+   DROPDOWN OPTIONS
+   ========================================================= */
+
+#content-main select option {
+
+    background: #ffffff !important;
+
+    color: #20364d !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    font-size: 14px !important;
+
+    font-weight: 400 !important;
+
+    padding: 10px !important;
+}
+
+
+/* =========================================================
+   DROPDOWN HOVER / FOCUS
+   ========================================================= */
+
+#content-main select:hover {
+
+    border-color: #9bb8d0 !important;
+}
+
+#content-main select:focus {
+
+    border-color: #1976d2 !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 118, 210, 0.12) !important;
+}
+
+
+/* =========================================================
+   DATE FIELD
+   ========================================================= */
+
+#id_preferred_date {
+
+    width: auto !important;
+
+    min-width: 165px !important;
+
+    height: 48px !important;
+
+    min-height: 48px !important;
+
+    padding: 10px 12px !important;
+
+    line-height: 26px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+#content-main textarea {
+
+    min-height: 130px !important;
+
+    height: auto !important;
+
+    padding: 12px 14px !important;
+
+    line-height: 22px !important;
+
+    border-radius: 9px !important;
+
+    resize: vertical !important;
+}
+
+
+/* =========================================================
+   FILE INPUT
+   ========================================================= */
+
+#content-main input[type="file"] {
+
+    min-height: 46px !important;
+
+    padding: 9px 10px !important;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+#content-main input:focus,
+#content-main textarea:focus {
+
+    border-color: #1976d2 !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(25, 118, 210, 0.12) !important;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+   ========================================================= */
+
+#content-main input:hover,
+#content-main textarea:hover {
+
+    border-color: #9bb8d0 !important;
+}
+
+
+/* =========================================================
+   SAVE BUTTONS
+   ========================================================= */
+
+.submit-row {
+
+    background: transparent !important;
+
+    border: none !important;
+
+    padding: 20px 0 !important;
+
+    margin-top: 10px !important;
+}
+
+.submit-row input,
+.submit-row a {
+
+    border-radius: 8px !important;
+
+    padding: 11px 22px !important;
+
+    font-size: 14px !important;
+
+    font-weight: 600 !important;
+
+    min-height: 44px !important;
+}
+
+input[name="_save"] {
+
+    background: #1976d2 !important;
+
+    color: #ffffff !important;
+
+    border: none !important;
+
+    cursor: pointer !important;
+}
+
+input[name="_save"]:hover {
+
+    background: #125ca8 !important;
+}
+
+input[name="_continue"] {
+
+    background: #ffffff !important;
+
+    color: #174a7c !important;
+
+    border: 1px solid #b8cde0 !important;
+
+    cursor: pointer !important;
+}
+
+input[name="_continue"]:hover {
+
+    background: #eef7ff !important;
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+.deletelink {
+
+    background: #dc2626 !important;
+
+    color: #ffffff !important;
+
+    padding: 10px 18px !important;
+
+    border-radius: 8px !important;
+
+    font-weight: 600 !important;
+
+    text-decoration: none !important;
+}
+
+.deletelink:hover {
+
+    background: #b91c1c !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   CHANGE LIST TABLE
+   ========================================================= */
+
+#result_list {
+
+    width: 100% !important;
+
+    border-radius: 10px !important;
+
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+}
+
+#result_list thead th {
+
+    background: #eaf4fb !important;
+
+    color: #173b5e !important;
+
+    font-weight: 700 !important;
+
+    padding: 13px 12px !important;
+
+    vertical-align: middle !important;
+}
+
+#result_list tbody td {
+
+    padding: 12px !important;
+
+    vertical-align: middle !important;
+
+    border-bottom: 1px solid #edf1f5 !important;
+}
+
+#result_list tbody tr:hover {
+
+    background: #f3f9ff !important;
+}
+
+
+/* =========================================================
+   SEARCH TOOLBAR
+   ========================================================= */
+
+#toolbar {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 10px !important;
+
+    padding: 12px !important;
+
+    margin-bottom: 15px !important;
+}
+
+#searchbar {
+
+    min-height: 42px !important;
+
+    border-radius: 8px !important;
+}
+
+
+/* =========================================================
+   ACTION BAR
+   ========================================================= */
+
+.actions {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 10px !important;
+
+    padding: 10px !important;
+
+    margin-bottom: 15px !important;
+}
+
+.actions select {
+
+    width: auto !important;
+
+    min-width: 220px !important;
+
+    height: 42px !important;
+
+    min-height: 42px !important;
+}
+
+.actions button {
+
+    min-height: 42px !important;
+
+    border-radius: 8px !important;
+}
+
+
+/* =========================================================
+   FILTER PANEL
+   ========================================================= */
+
+#changelist-filter {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 12px !important;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05) !important;
+
+    overflow: hidden !important;
+}
+
+#changelist-filter h2 {
+
+    background: linear-gradient(
+        135deg,
+        #e8f5ff,
+        #d7efff
+    ) !important;
+
+    color: #1264a3 !important;
+
+    padding: 14px !important;
+
+    font-weight: 700 !important;
+}
+
+#changelist-filter h3 {
+
+    color: #20364d !important;
+
+    font-weight: 700 !important;
+}
+
+#changelist-filter li {
+
+    padding: 5px 10px !important;
+}
+
+
+/* =========================================================
+   RECENT ACTIONS
+   ========================================================= */
+
+#recent-actions-module {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 14px !important;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.06) !important;
+
+    overflow: hidden !important;
+}
+
+#recent-actions-module h2 {
+
+    background: linear-gradient(
+        135deg,
+        #e8f5ff,
+        #d7efff
+    ) !important;
+
+    color: #1264a3 !important;
+
+    padding: 16px !important;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+   ========================================================= */
+
+img {
+
+    border-radius: 10px;
+
+    max-width: 100%;
+}
+
+.field-phone_image_preview img {
+
+    max-width: 350px !important;
+
+    max-height: 400px !important;
+
+    object-fit: contain !important;
+
+    border-radius: 12px !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    padding: 5px !important;
+
+    background: #ffffff !important;
+}
+
+
+/* =========================================================
+   INLINE GROUP
+   ========================================================= */
+
+.inline-group {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 14px !important;
+
+    overflow: hidden !important;
+
+    margin-bottom: 25px !important;
+}
+
+.inline-group h2 {
+
+    background: linear-gradient(
+        135deg,
+        #e8f5ff,
+        #d7efff
+    ) !important;
+
+    color: #1264a3 !important;
+
+    padding: 15px 20px !important;
+}
+
+
+/* =========================================================
+   MESSAGES
+   ========================================================= */
+
+.messagelist {
+
+    margin: 15px 0 !important;
+}
+
+.messagelist li {
+
+    border-radius: 9px !important;
+
+    padding: 12px 15px !important;
+
+    margin-bottom: 8px !important;
+}
+
+
+/* =========================================================
+   OBJECT TOOLS
+   ========================================================= */
+
+.object-tools {
+
+    margin-bottom: 20px !important;
+}
+
+.object-tools a {
+
+    border-radius: 8px !important;
+
+    font-weight: 600 !important;
+
+    padding: 9px 14px !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.paginator {
+
+    background: #ffffff !important;
+
+    border: 1px solid #dbe5ef !important;
+
+    border-radius: 10px !important;
+
+    padding: 12px !important;
+
+    margin-top: 15px !important;
+}
+
+
+/* =========================================================
+   CALENDAR / CLOCK
+   ========================================================= */
+
+.calendarbox,
+.clockbox {
+
+    z-index: 9999 !important;
+
+    border-radius: 10px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    #content {
+
+        padding: 0 18px 30px 18px !important;
+    }
+
+    #content h1 {
+
+        font-size: 25px !important;
+    }
+
+    .form-row {
+
+        padding: 14px 16px !important;
+    }
+
+    #content-main select {
+
+        width: 100% !important;
+
+        height: 48px !important;
+
+        min-height: 48px !important;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    #header {
+
+        padding: 12px 15px !important;
+    }
+
+    #branding h1 {
+
+        font-size: 19px !important;
+
+        line-height: 28px !important;
+    }
+
+    #content {
+
+        padding: 10px !important;
+
+        margin: 15px auto !important;
+    }
+
+    #content h1 {
+
+        font-size: 23px !important;
+
+        margin-bottom: 18px !important;
+    }
+
+    .breadcrumbs {
+
+        padding: 10px 15px !important;
+    }
+
+    .form-row {
+
+        padding: 14px !important;
+
+        min-height: auto !important;
+    }
+
+    .form-row label {
+
+        display: block !important;
+
+        width: 100% !important;
+
+        margin-bottom: 7px !important;
+    }
+
+    #content-main select {
+
+        width: 100% !important;
+
+        height: 48px !important;
+
+        min-height: 48px !important;
+
+        font-size: 14px !important;
+    }
+
+    #id_service,
+    #id_service_type,
+    #id_status {
+
+        width: 100% !important;
+
+        height: 48px !important;
+
+        min-height: 48px !important;
+    }
+
+    #result_list {
+
+        overflow-x: auto !important;
+
+        display: block !important;
+    }
+
+    #result_list table {
+
+        min-width: 900px !important;
+    }
+
+    .submit-row {
+
+        display: flex !important;
+
+        flex-wrap: wrap !important;
+
+        gap: 8px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #header {
+
+        padding: 10px !important;
+    }
+
+    #branding h1 {
+
+        font-size: 17px !important;
+    }
+
+    fieldset {
+
+        border-radius: 10px !important;
+    }
+
+    fieldset h2 {
+
+        font-size: 15px !important;
+
+        padding: 13px 15px !important;
+    }
+
+    .form-row {
+
+        padding: 12px !important;
+    }
+
+    #content-main select,
+    #id_service,
+    #id_service_type,
+    #id_status {
+
+        height: 46px !important;
+
+        min-height: 46px !important;
+
+        font-size: 14px !important;
+    }
+
+    #content-main input[type="text"],
+    #content-main input[type="number"],
+    #content-main input[type="email"],
+    #content-main input[type="date"] {
+
+        min-height: 46px !important;
+
+        height: 46px !important;
+    }
+
+    .submit-row input {
+
+        width: 100% !important;
+    }
+}
+
+
+/* =========================================================
+   FINAL CLIPPING PROTECTION
+   ========================================================= */
+
+#content-main,
+#content-main form,
+#content-main fieldset,
+#content-main .form-row,
+#content-main .field-box,
+#content-main .aligned {
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 9px;
+
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #eef3f8;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #a8bfd3;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #7f9eb8;
+}

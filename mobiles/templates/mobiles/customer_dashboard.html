@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Dashboard - MS Mobiles</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: #0b1f3a;
+            color: white;
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .logout {
+            background: #dc2626;
+            padding: 9px 15px;
+            border-radius: 7px;
+        }
+
+        /* ================= CONTAINER ================= */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        /* ================= WELCOME ================= */
+
+        .welcome {
+            background: linear-gradient(
+                135deg,
+                #0b1f3a,
+                #1976d2
+            );
+
+            color: white;
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            opacity: 0.9;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section-title {
+            margin-bottom: 20px;
+            color: #0b1f3a;
+        }
+
+        /* ================= REPAIR CARD ================= */
+
+        .repair-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .repair-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .repair-id {
+            color: #1976d2;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* ================= STATUS ================= */
+
+        .status {
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .pending {
+            background: #fff7ed;
+            color: #c2410c;
+        }
+
+        .confirmed {
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+
+        .in-progress {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .ready {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .completed {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .cancelled {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* ================= DETAILS ================= */
+
+        .details {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .detail strong {
+            display: block;
+            color: #555;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .detail span {
+            color: #111;
+            font-weight: 600;
+        }
+
+        /* ================= COST ================= */
+
+        .cost-box {
+            background: #eff6ff;
+            border-left: 5px solid #1976d2;
+
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .cost-box h3 {
+            color: #0b1f3a;
+            margin-bottom: 7px;
+        }
+
+        .cost {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        /* ================= NOTES ================= */
+
+        .notes {
+            background: #f8fafc;
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .notes h3 {
+            margin-bottom: 8px;
+            color: #0b1f3a;
+        }
+
+        /* ================= IMAGE ================= */
+
+        .phone-image {
+            margin-bottom: 20px;
+        }
+
+        .phone-image h3 {
+            margin-bottom: 12px;
+            color: #0b1f3a;
+        }
+
+        .phone-image img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        /* ================= BUTTON ================= */
+
+        .track-btn {
+            display: inline-block;
+
+            background: #1976d2;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+        }
+
+        .track-btn:hover {
+            background: #0b1f3a;
+        }
+
+        /* ================= NO REPAIRS ================= */
+
+        .no-repairs {
+            background: white;
+            padding: 50px;
+            text-align: center;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .no-repairs h2 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .book-btn {
+            display: inline-block;
+            margin-top: 20px;
+
+            background: #1976d2;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0b1f3a;
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 50px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+            .repair-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        📱 MS Mobiles
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/services/">
+            Services
+        </a>
+
+        <a href="/book-repair/">
+            Book Repair
+        </a>
+
+        <a href="/repair-track/">
+            Track Repair
+        </a>
+
+        <a
+            href="/logout/"
+            class="logout"
+        >
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="container">
+
+
+    <!-- WELCOME -->
+
+    <div class="welcome">
+
+        <h1>
+            Welcome, {{ request.user.username }} 👋
+        </h1>
+
+        <p>
+            Manage your mobile repair requests
+            and track your repair status.
+        </p>
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h2 class="section-title">
+        📋 My Repair Requests
+    </h2>
+
+
+    {% if repairs %}
+
+
+        {% for repair in repairs %}
+
+
+        <!-- ================= REPAIR CARD ================= -->
+
+        <div class="repair-card">
+
+
+            <!-- HEADER -->
+
+            <div class="repair-header">
+
+                <div class="repair-id">
+
+                    Repair #{{ repair.id }}
+
+                </div>
+
+
+                {% if repair.status == "PENDING" %}
+
+                    <span class="status pending">
+                        🟠 Pending
+                    </span>
+
+                {% elif repair.status == "CONFIRMED" %}
+
+                    <span class="status confirmed">
+                        🔵 Confirmed
+                    </span>
+
+                {% elif repair.status == "IN_PROGRESS" %}
+
+                    <span class="status in-progress">
+                        🟡 In Progress
+                    </span>
+
+                {% elif repair.status == "READY" %}
+
+                    <span class="status ready">
+                        🟢 Ready for Pickup
+                    </span>
+
+                {% elif repair.status == "COMPLETED" %}
+
+                    <span class="status completed">
+                        🟢 Completed
+                    </span>
+
+                {% elif repair.status == "CANCELLED" %}
+
+                    <span class="status cancelled">
+                        🔴 Cancelled
+                    </span>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="details">
+
+
+                <div class="detail">
+
+                    <strong>
+                        Mobile Brand
+                    </strong>
+
+                    <span>
+                        {{ repair.brand }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Mobile Model
+                    </strong>
+
+                    <span>
+                        {{ repair.mobile_model }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Service
+                    </strong>
+
+                    <span>
+                        {{ repair.service }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Service Type
+                    </strong>
+
+                    <span>
+                        {{ repair.service_type }}
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Preferred Date
+                    </strong>
+
+                    <span>
+
+                        {% if repair.preferred_date %}
+
+                            {{ repair.preferred_date|date:"d-m-Y" }}
+
+                        {% else %}
+
+                            Not specified
+
+                        {% endif %}
+
+                    </span>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <strong>
+                        Request Date
+                    </strong>
+
+                    <span>
+
+                        {{ repair.request_date|date:"d-m-Y H:i" }}
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- COST -->
+
+            <div class="cost-box">
+
+                <h3>
+                    💰 Estimated Repair Cost
+                </h3>
+
+
+                {% if repair.estimated_cost %}
+
+                    <div class="cost">
+                        ₹{{ repair.estimated_cost }}
+                    </div>
+
+                {% else %}
+
+                    <div>
+                        Not estimated yet
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- TECHNICIAN NOTES -->
+
+            <div class="notes">
+
+                <h3>
+                    🧑‍🔧 Technician Notes
+                </h3>
+
+
+                {% if repair.technician_notes %}
+
+                    <p>
+                        {{ repair.technician_notes }}
+                    </p>
+
+                {% else %}
+
+                    <p>
+                        No technician notes available yet.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- PHONE IMAGE -->
+
+            {% if repair.phone_image %}
+
+            <div class="phone-image">
+
+                <h3>
+                    📱 Uploaded Phone Image
+                </h3>
+
+                <img
+                    src="{{ repair.phone_image.url }}"
+                    alt="Uploaded phone image"
+                >
+
+            </div>
+
+            {% endif %}
+
+
+            <!-- TRACK BUTTON -->
+
+            <a
+                href="/repair-track/?repair_id={{ repair.id }}"
+                class="track-btn"
+            >
+                🔍 Track Repair
+            </a>
+
+
+        </div>
+
+
+        {% endfor %}
+
+
+    {% else %}
+
+
+        <!-- NO REPAIRS -->
+
+        <div class="no-repairs">
+
+            <h2>
+                📱 No Repair Requests
+            </h2>
+
+            <p>
+                You haven't booked any mobile repairs yet.
+            </p>
+
+            <a
+                href="/book-repair/"
+                class="book-btn"
+            >
+                🔧 Book a Repair
+            </a>
+
+        </div>
+
+
+    {% endif %}
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 MS Mobiles |
+    Customer Dashboard
+
+</footer>
+
+
+</body>
+
+</html>
