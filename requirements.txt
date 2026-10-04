@@ -4,3 +4,4 @@ django-jazzmin
 requests
 whitenoise
 gunicorn
+dj-database-url
