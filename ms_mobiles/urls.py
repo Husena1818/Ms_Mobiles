@@ -10,7 +10,7 @@ def robots_txt(request):
     content = """User-agent: *
 Allow: /
 
-Sitemap: http://127.0.0.1:8000/sitemap.xml
+Sitemap: https://ms-mobiles-ogu4.onrender.com/sitemap.xml
 """
     return HttpResponse(content, content_type="text/plain")
 

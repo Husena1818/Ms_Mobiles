@@ -252,12 +252,49 @@ def book_repair(request):
 # REPAIR TRACKING
 # =========================================================
 
+# =========================================================
+# REPAIR TRACKING
+# =========================================================
+
 def repair_tracking(request):
 
     repair = None
     searched = False
 
-    if request.method == "POST":
+    # -----------------------------------------------------
+    # GET request - Track using URL
+    # Example:
+    # /repair-track/?repair_id=35
+    # -----------------------------------------------------
+
+    if request.method == "GET":
+
+        repair_id = request.GET.get(
+            "repair_id", ""
+        ).strip()
+
+        if repair_id:
+
+            searched = True
+
+            try:
+
+                repair = RepairRequest.objects.get(
+                    id=int(repair_id)
+                )
+
+            except (
+                RepairRequest.DoesNotExist,
+                ValueError,
+            ):
+
+                repair = None
+
+    # -----------------------------------------------------
+    # POST request - Track using form
+    # -----------------------------------------------------
+
+    elif request.method == "POST":
 
         searched = True
 
@@ -285,6 +322,7 @@ def repair_tracking(request):
                 RepairRequest.DoesNotExist,
                 ValueError,
             ):
+
                 repair = None
 
     return render(
