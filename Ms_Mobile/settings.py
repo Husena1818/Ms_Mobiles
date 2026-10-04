@@ -15,11 +15,12 @@ SECRET_KEY = 'django-insecure-646kq@s-3l9aupsecwz&73x$fxz52xn&8k97j$7dvv$j)427u#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = [
+    'ms-mobiles-4us8.onrender.com',
     'localhost',
     '127.0.0.1',
 ]
-
 
 # Application definition
 
@@ -145,7 +146,7 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # Replace this with your 16-character Gmail App Password
-EMAIL_HOST_PASSWORD = 'kirr yhud qeci xoqm'
+EMAIL_HOST_PASSWORD = 'dpfm bwca lckl zpvf'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 WHATSAPP_PHONE_NUMBER_ID = "1372955829229389"
