@@ -131,9 +131,8 @@ def sitemap(request):
 
     return HttpResponse(
         sitemap_content,
-        content_type='application/xml'
+        content_type='text/xml'
     )
-
 
 def setup_admin(request):
 
