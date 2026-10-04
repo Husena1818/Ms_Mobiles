@@ -18,7 +18,6 @@
             color: #222;
         }
 
-        /* Navbar */
         nav {
             background: #111827;
             color: white;
@@ -43,7 +42,6 @@
             color: #38bdf8;
         }
 
-        /* Hero */
         .hero {
             background: linear-gradient(135deg, #0f172a, #1e3a8a);
             color: white;
@@ -61,7 +59,6 @@
             color: #dbeafe;
         }
 
-        /* Main */
         .container {
             width: 90%;
             max-width: 1100px;
@@ -83,7 +80,6 @@
             color: #6b7280;
         }
 
-        /* Services */
         .services {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -114,7 +110,6 @@
             font-size: 14px;
         }
 
-        /* Form */
         .form-box {
             background: white;
             padding: 35px;
@@ -167,7 +162,6 @@
             border-color: #2563eb;
         }
 
-        /* Radio buttons */
         .radio-group {
             display: flex;
             flex-wrap: wrap;
@@ -192,7 +186,6 @@
             margin-right: 6px;
         }
 
-        /* Button */
         .submit-btn {
             width: 100%;
             padding: 15px;
@@ -209,7 +202,6 @@
             background: #1d4ed8;
         }
 
-        /* Success Message */
         .success-message {
             background: #dcfce7;
             color: #166534;
@@ -220,7 +212,6 @@
             font-weight: bold;
         }
 
-        /* Track Repair */
         .track-box {
             background: white;
             padding: 35px;
@@ -250,7 +241,6 @@
             background: #374151;
         }
 
-        /* Cost */
         .cost-box {
             background: white;
             padding: 35px;
@@ -267,7 +257,6 @@
             margin-top: 15px;
         }
 
-        /* Review */
         .review-box {
             background: white;
             padding: 35px;
@@ -287,7 +276,6 @@
             cursor: pointer;
         }
 
-        /* Footer */
         footer {
             background: #111827;
             color: white;
@@ -300,7 +288,6 @@
             color: #d1d5db;
         }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .services {
                 grid-template-columns: repeat(2, 1fr);
@@ -342,21 +329,28 @@
 <body>
 
     <!-- Navbar -->
+
     <nav>
 
         <h2>MS Mobiles</h2>
 
         <div>
+
             <a href="/">Home</a>
+
             <a href="/repair/">Repair</a>
+
             <a href="/register/">Register</a>
-            <a href="#">Login</a>
+
+            <a href="/login/">Login</a>
+
         </div>
 
     </nav>
 
 
     <!-- Hero -->
+
     <section class="hero">
 
         <h1>Mobile Repair Service</h1>
@@ -382,7 +376,8 @@
                 <br>
 
                 Your Repair ID is:
-                <strong>#{{ repair_request.id }}</strong>
+
+                <strong>#{{ repair_id }}</strong>
 
             </div>
 
@@ -405,51 +400,106 @@
         <div class="services">
 
             <div class="service-card">
+
                 <div class="icon">📱</div>
+
                 <h3>Broken Screen</h3>
-                <p>Screen replacement and display repair.</p>
+
+                <p>
+                    Screen replacement and display repair.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">🔋</div>
+
                 <h3>Battery Issue</h3>
-                <p>Battery replacement and battery-related problems.</p>
+
+                <p>
+                    Battery replacement and battery-related repairs.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">🔌</div>
+
                 <h3>Charging Problem</h3>
-                <p>Charging port and charging-related repairs.</p>
+
+                <p>
+                    Charging port and charging-related repairs.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">🔊</div>
+
                 <h3>Speaker / Mic</h3>
-                <p>Speaker, microphone and audio problems.</p>
+
+                <p>
+                    Speaker, microphone and audio problems.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">⚙️</div>
+
                 <h3>Software Problem</h3>
-                <p>Software errors, updates and performance issues.</p>
+
+                <p>
+                    Software errors, updates and performance issues.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">🖥️</div>
+
                 <h3>Display Problem</h3>
-                <p>Display, touch and screen-related problems.</p>
+
+                <p>
+                    Display, touch and screen-related repairs.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">💧</div>
+
                 <h3>Water Damage</h3>
-                <p>Inspection and repair for water-damaged phones.</p>
+
+                <p>
+                    Inspection and repair for water-damaged phones.
+                </p>
+
             </div>
 
+
             <div class="service-card">
+
                 <div class="icon">🔧</div>
+
                 <h3>Motherboard</h3>
-                <p>Advanced motherboard diagnosis and repair.</p>
+
+                <p>
+                    Advanced motherboard diagnosis and repair.
+                </p>
+
             </div>
 
         </div>
@@ -574,9 +624,7 @@
                         Select Problem
                     </label>
 
-
                     <div class="radio-group">
-
 
                         <label class="radio-option">
 
@@ -686,7 +734,6 @@
 
                         </label>
 
-
                     </div>
 
                 </div>
@@ -732,9 +779,7 @@
                         Service Type
                     </label>
 
-
                     <div class="radio-group">
-
 
                         <label class="radio-option">
 
@@ -760,7 +805,6 @@
 
                         </label>
 
-
                     </div>
 
                 </div>
@@ -775,7 +819,6 @@
                     Submit Repair Request
 
                 </button>
-
 
             </form>
 
@@ -797,13 +840,27 @@
 
         <div class="track-box">
 
-            <input
-                type="text"
-                placeholder="Enter Repair ID">
+            <form
+                method="POST"
+                action="/track-repair/">
 
-            <button class="track-btn">
-                Track Repair
-            </button>
+                {% csrf_token %}
+
+                <input
+                    type="text"
+                    name="repair_id"
+                    placeholder="Enter Repair ID"
+                    required>
+
+                <button
+                    type="submit"
+                    class="track-btn">
+
+                    Track Repair
+
+                </button>
+
+            </form>
 
         </div>
 

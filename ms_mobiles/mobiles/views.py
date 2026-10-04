@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.db.models import Q
 
 from .models import Mobile, Repair, Order
 
@@ -18,17 +19,54 @@ def home(request):
 
 
 def mobiles(request):
+
+    search = request.GET.get(
+        'search',
+        ''
+    ).strip()
+
+    selected_brand = request.GET.get(
+        'brand',
+        ''
+    ).strip()
+
     mobile_list = Mobile.objects.all().order_by('-id')
+
+    if search:
+        mobile_list = mobile_list.filter(
+            Q(brand__icontains=search) |
+            Q(model_name__icontains=search)
+        )
+
+    if selected_brand:
+        mobile_list = mobile_list.filter(
+            brand=selected_brand
+        )
+
+    brands = (
+        Mobile.objects
+        .values_list('brand', flat=True)
+        .distinct()
+        .order_by('brand')
+    )
 
     return render(
         request,
         'mobiles/mobiles.html',
-        {'mobiles': mobile_list}
+        {
+            'mobiles': mobile_list,
+            'search': search,
+            'brands': brands,
+            'selected_brand': selected_brand,
+        }
     )
 
 
 def mobile_detail(request, id):
-    mobile = get_object_or_404(Mobile, id=id)
+    mobile = get_object_or_404(
+        Mobile,
+        id=id
+    )
 
     return render(
         request,
@@ -42,23 +80,28 @@ def repair(request):
     if request.method == 'POST':
 
         customer_name = request.POST.get(
-            'customer_name', ''
+            'customer_name',
+            ''
         ).strip()
 
         phone_number = request.POST.get(
-            'phone_number', ''
+            'phone_number',
+            ''
         ).strip()
 
         mobile_brand = request.POST.get(
-            'mobile_brand', ''
+            'mobile_brand',
+            ''
         ).strip()
 
         mobile_model = request.POST.get(
-            'mobile_model', ''
+            'mobile_model',
+            ''
         ).strip()
 
         imei_number = request.POST.get(
-            'imei_number', ''
+            'imei_number',
+            ''
         ).strip()
 
         problem_type = request.POST.get(
@@ -67,7 +110,8 @@ def repair(request):
         )
 
         problem = request.POST.get(
-            'problem', ''
+            'problem',
+            ''
         ).strip()
 
         service_type = request.POST.get(
@@ -161,7 +205,8 @@ def track_repair(request):
     if request.method == 'POST':
 
         repair_id = request.POST.get(
-            'repair_id', ''
+            'repair_id',
+            ''
         ).strip()
 
         searched = True
@@ -193,19 +238,23 @@ def register(request):
     if request.method == 'POST':
 
         username = request.POST.get(
-            'username', ''
+            'username',
+            ''
         ).strip()
 
         email = request.POST.get(
-            'email', ''
+            'email',
+            ''
         ).strip()
 
         password = request.POST.get(
-            'password', ''
+            'password',
+            ''
         )
 
         confirm_password = request.POST.get(
-            'confirm_password', ''
+            'confirm_password',
+            ''
         )
 
         if not username or not email or not password:
@@ -271,11 +320,13 @@ def user_login(request):
     if request.method == 'POST':
 
         username = request.POST.get(
-            'username', ''
+            'username',
+            ''
         ).strip()
 
         password = request.POST.get(
-            'password', ''
+            'password',
+            ''
         )
 
         user = authenticate(
