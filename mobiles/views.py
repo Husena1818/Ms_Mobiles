@@ -94,10 +94,8 @@ def track_repair(request):
     repair_id = request.GET.get('repair_id')
 
     if repair_id:
-
         try:
             booking = RepairBooking.objects.get(id=repair_id)
-
         except RepairBooking.DoesNotExist:
             booking = None
 
@@ -142,7 +140,6 @@ def setup_admin(request):
     setup_key = os.getenv("ADMIN_SETUP_KEY")
 
     if request.GET.get("key") != setup_key:
-
         return HttpResponse(
             "Invalid setup key.",
             status=403
@@ -154,7 +151,6 @@ def setup_admin(request):
     password = os.getenv("ADMIN_PASSWORD")
 
     if not username or not password:
-
         return HttpResponse(
             "ADMIN_USERNAME or ADMIN_PASSWORD is missing.",
             status=500
@@ -172,4 +168,20 @@ def setup_admin(request):
 
     return HttpResponse(
         f"Admin setup successful. Username: {username}"
+    )
+
+
+def indexnow_key(request, key):
+
+    indexnow_key = os.getenv("INDEXNOW_KEY", "")
+
+    if key != indexnow_key:
+        return HttpResponse(
+            "",
+            status=404
+        )
+
+    return HttpResponse(
+        indexnow_key,
+        content_type="text/plain"
     )

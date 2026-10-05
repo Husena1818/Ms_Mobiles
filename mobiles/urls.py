@@ -1,7 +1,7 @@
 from django.urls import path
 from django.http import HttpResponse
 
-from .views import home, track_repair, sitemap, setup_admin
+from .views import home, track_repair, sitemap, setup_admin, indexnow_key
 
 
 urlpatterns = [
@@ -44,4 +44,9 @@ Sitemap: https://ms-mobiles-4us8.onrender.com/sitemap.xml
         ),
         name='robots'
     ),
+    path(
+    '<str:key>.txt',
+    indexnow_key,
+    name='indexnow_key'
+),
 ]
