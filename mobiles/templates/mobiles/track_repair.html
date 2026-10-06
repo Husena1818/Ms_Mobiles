@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Track Repair - MS Mobiles</title>
@@ -96,8 +95,6 @@
             color: #444;
         }
 
-        /* ================= REPAIR PROGRESS ================= */
-
         .repair-progress {
             margin-top: 30px;
             padding: 25px;
@@ -176,8 +173,6 @@
             color: #0b1f3a;
         }
 
-        /* ================= NOT FOUND ================= */
-
         .not-found {
             margin-top: 25px;
             padding: 15px;
@@ -186,8 +181,6 @@
             border-radius: 8px;
         }
 
-        /* ================= BACK BUTTON ================= */
-
         .back {
             display: inline-block;
             margin-top: 25px;
@@ -195,8 +188,6 @@
             text-decoration: none;
             font-weight: bold;
         }
-
-        /* ================= MOBILE ================= */
 
         @media (max-width: 700px) {
 
@@ -247,7 +238,6 @@
         <h2>MS Mobiles</h2>
     </div>
 
-
     <div class="container">
 
         <div class="track-box">
@@ -258,14 +248,15 @@
                 Enter your Repair ID to check your current repair status.
             </p>
 
-
-            <form method="GET" class="track-form">
+            <!-- GET request: CSRF token is not required -->
+            <form method="GET" action="{% url 'track_repair' %}" class="track-form">
 
                 <input
                     type="number"
                     name="repair_id"
                     placeholder="Enter Repair ID"
                     value="{{ repair_id|default:'' }}"
+                    min="1"
                     required
                 >
 
@@ -274,7 +265,6 @@
                 </button>
 
             </form>
-
 
             {% if repair_id and booking %}
 
@@ -308,9 +298,6 @@
                         {{ booking.preferred_date }}
                     </p>
 
-
-                    <!-- ================= REPAIR PROGRESS ================= -->
-
                     <div class="repair-progress">
 
                         <h3>Repair Progress</h3>
@@ -326,7 +313,6 @@
                                 <p>New</p>
                             </div>
 
-
                             <div class="step
                                 {% if booking.status == 'Accepted' or booking.status == 'Diagnosis' or booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
                                     active
@@ -335,7 +321,6 @@
                                 <span>2</span>
                                 <p>Accepted</p>
                             </div>
-
 
                             <div class="step
                                 {% if booking.status == 'Diagnosis' or booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
@@ -346,7 +331,6 @@
                                 <p>Diagnosis</p>
                             </div>
 
-
                             <div class="step
                                 {% if booking.status == 'In Progress' or booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
                                     active
@@ -355,7 +339,6 @@
                                 <span>4</span>
                                 <p>In Progress</p>
                             </div>
-
 
                             <div class="step
                                 {% if booking.status == 'Quality Check' or booking.status == 'Ready' or booking.status == 'Completed' %}
@@ -366,7 +349,6 @@
                                 <p>Quality Check</p>
                             </div>
 
-
                             <div class="step
                                 {% if booking.status == 'Ready' or booking.status == 'Completed' %}
                                     active
@@ -375,7 +357,6 @@
                                 <span>6</span>
                                 <p>Ready</p>
                             </div>
-
 
                             <div class="step
                                 {% if booking.status == 'Completed' %}
@@ -388,50 +369,37 @@
 
                         </div>
 
-
                         <p class="current-status">
-
                             Current Status:
                             <strong>{{ booking.status }}</strong>
-
                         </p>
 
                     </div>
 
-
                     {% if booking.estimated_cost %}
-
                         <p>
                             <strong>Estimated Cost:</strong>
                             ₹{{ booking.estimated_cost }}
                         </p>
-
                     {% endif %}
 
-
                     {% if booking.final_cost %}
-
                         <p>
                             <strong>Final Cost:</strong>
                             ₹{{ booking.final_cost }}
                         </p>
-
                     {% endif %}
 
                 </div>
 
-
             {% elif repair_id %}
 
                 <div class="not-found">
-
                     No repair booking found with Repair ID
                     <strong>{{ repair_id }}</strong>.
-
                 </div>
 
             {% endif %}
-
 
             <a href="/" class="back">
                 ← Back to MS Mobiles
@@ -442,4 +410,5 @@
     </div>
 
 </body>
+
 </html>

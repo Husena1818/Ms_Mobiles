@@ -1,7 +1,15 @@
-
-User-agent: *
+path(
+    'robots.txt',
+    lambda request: HttpResponse(
+        """User-agent: *
 Allow: /
 
 Disallow: /admin/
+Disallow: /setup-admin/
 
-Sitemap: http://127.0.0.1:8000/sitemap.xml
+Sitemap: https://ms-mobiles-4us8.onrender.com/sitemap.xml
+""",
+        content_type='text/plain'
+    ),
+    name='robots'
+),
