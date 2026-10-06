@@ -27,45 +27,51 @@ def home(request):
         )
 
         # Email notification to MS Mobiles
-        send_mail(
-            subject='New Repair Booking - MS Mobiles',
-            message=(
-                f'New repair booking received.\n\n'
-                f'Customer: {booking.customer_name}\n'
-                f'Email: {booking.customer_email}\n'
-                f'Phone: {booking.phone_number}\n'
-                f'Device: {booking.mobile_brand} {booking.mobile_model}\n'
-                f'Problem: {booking.problem_type}\n'
-                f'Visit Type: {booking.visit_type}\n'
-                f'Preferred Date: {booking.preferred_date}\n'
-                f'Description: {booking.problem_description}\n'
-            ),
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            recipient_list=[settings.EMAIL_HOST_USER],
-            fail_silently=False,
-        )
+        try:
+            send_mail(
+                subject='New Repair Booking - MS Mobiles',
+                message=(
+                    f'New repair booking received.\n\n'
+                    f'Customer: {booking.customer_name}\n'
+                    f'Email: {booking.customer_email}\n'
+                    f'Phone: {booking.phone_number}\n'
+                    f'Device: {booking.mobile_brand} {booking.mobile_model}\n'
+                    f'Problem: {booking.problem_type}\n'
+                    f'Visit Type: {booking.visit_type}\n'
+                    f'Preferred Date: {booking.preferred_date}\n'
+                    f'Description: {booking.problem_description}\n'
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=[settings.EMAIL_HOST_USER],
+                fail_silently=False,
+            )
+        except Exception as e:
+            print("MS Mobiles notification email failed:", e)
 
         # Confirmation email to customer
         if booking.customer_email:
 
-            send_mail(
-                subject='Repair Booking Confirmed - MS Mobiles',
-                message=(
-                    f'Hello {booking.customer_name},\n\n'
-                    f'Your repair booking has been successfully submitted.\n\n'
-                    f'Repair ID: #{booking.id}\n'
-                    f'Mobile: {booking.mobile_brand} {booking.mobile_model}\n'
-                    f'Problem: {booking.problem_type}\n'
-                    f'Visit Type: {booking.visit_type}\n'
-                    f'Preferred Date: {booking.preferred_date}\n\n'
-                    f'Please keep your Repair ID to track your repair status.\n\n'
-                    f'Thank you,\n'
-                    f'MS Mobiles'
-                ),
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[booking.customer_email],
-                fail_silently=False,
-            )
+            try:
+                send_mail(
+                    subject='Repair Booking Confirmed - MS Mobiles',
+                    message=(
+                        f'Hello {booking.customer_name},\n\n'
+                        f'Your repair booking has been successfully submitted.\n\n'
+                        f'Repair ID: #{booking.id}\n'
+                        f'Mobile: {booking.mobile_brand} {booking.mobile_model}\n'
+                        f'Problem: {booking.problem_type}\n'
+                        f'Visit Type: {booking.visit_type}\n'
+                        f'Preferred Date: {booking.preferred_date}\n\n'
+                        f'Please keep your Repair ID to track your repair status.\n\n'
+                        f'Thank you,\n'
+                        f'MS Mobiles'
+                    ),
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[booking.customer_email],
+                    fail_silently=False,
+                )
+            except Exception as e:
+                print("Customer confirmation email failed:", e)
 
         return render(
             request,
